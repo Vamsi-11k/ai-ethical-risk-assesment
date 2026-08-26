@@ -1,0 +1,17 @@
+{
+  "name": "ethicalai-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root workspace for EthicalAI AI Risk Assessment platform",
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:ml": "cd ml-service && .venv\\Scripts\\python -m uvicorn main:app --port 8000 --reload",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ml\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

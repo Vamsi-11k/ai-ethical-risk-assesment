@@ -1,0 +1,9 @@
+{
+  "original_target": "Result",
+  "phishing_value": -1,
+  "legitimate_value": 1,
+  "mapped_binary": {
+    "-1": 0,
+    "1": 1
+  }
+}
