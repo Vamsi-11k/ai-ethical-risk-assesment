@@ -23,6 +23,27 @@ function App() {
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
+  const [scanUrl, setScanUrl] = useState("");
+  const [isScanning, setIsScanning] = useState(false);
+
+  const handleScan = (url) => {
+    setScanUrl(url);
+    setIsScanning(true);
+    setTimeout(() => {
+      const resultsEl = document.getElementById("results");
+      if (resultsEl) {
+        resultsEl.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+  };
+
+  const handleScanComplete = () => {
+    setIsScanning(false);
+    setScanUrl("");
+  };
+
+  const [signupEmail, setSignupEmail] = useState("");
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -34,12 +55,20 @@ function App() {
     setView("home");
   };
 
+  const handleSignupSuccess = (newUser) => {
+    if (newUser?.email) {
+      setSignupEmail(newUser.email);
+    }
+    setView("login");
+  };
+
   if (view === "login") {
     return (
       <Login
         onGoHome={() => setView("home")}
         onGoToSignup={() => setView("signup")}
         onLoginSuccess={handleLoginSuccess}
+        initialEmail={signupEmail}
       />
     );
   }
@@ -49,7 +78,7 @@ function App() {
       <Signup
         onGoHome={() => setView("home")}
         onGoToLogin={() => setView("login")}
-        onSignupSuccess={() => setView("login")}
+        onSignupSuccess={handleSignupSuccess}
       />
     );
   }
@@ -63,13 +92,18 @@ function App() {
         onLogout={handleLogout}
       />
 
-      <Hero />
+      <Hero onScan={handleScan} isScanning={isScanning} />
       <Stats />
       <Features />
       <HowItWorks />
       <WhyChooseUs />
       <RiskCategories />
-      <Dashboard user={user} />
+      <Dashboard
+        user={user}
+        scanUrl={scanUrl}
+        isScanning={isScanning}
+        onScanComplete={handleScanComplete}
+      />
       <About />
       <Contact />
       <Footer />

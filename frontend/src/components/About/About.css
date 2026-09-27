@@ -1,164 +1,143 @@
+/* ============================================================
+   ABOUT — Dark split layout
+   ============================================================ */
+
 .about {
   width: 100%;
-  padding: 90px 8%;
-  background: white;
+  padding: var(--sp-20) var(--gutter);
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--bg-border);
   display: flex;
-  gap: 60px;
+  gap: 56px;
   align-items: flex-start;
-  color: #07162f;
 }
- 
-.about-left {
-  width: 52%;
-}
- 
+
+.about-left  { flex: 1; min-width: 0; }
+.about-right { flex: 0 0 40%; display: flex; flex-direction: column; gap: 16px; }
+
 .about-badge {
-  background: #dbeafe;
-  color: #1d4ed8;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
- 
+
+.about-badge::before { content: "//"; color: var(--brand); margin-right: 2px; }
+
 .about-left h2 {
-  font-size: 38px;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
   line-height: 1.25;
-  margin: 22px 0 20px;
-  color: #07162f;
-}
- 
-.about-left h2 span {
-  color: #2563eb;
-}
- 
-.about-left > p {
-  font-size: 17px;
-  color: #4b5563;
-  line-height: 1.75;
-  margin-bottom: 35px;
-}
- 
-.about-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
- 
-.about-list li {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-}
- 
-.about-list svg {
-  color: #10b981;
-  font-size: 20px;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
- 
-.about-list h4 {
-  margin: 0 0 5px;
-  font-size: 16px;
-  color: #07162f;
-}
- 
-.about-list p {
-  margin: 0;
-  font-size: 14.5px;
-  color: #6b7280;
-  line-height: 1.6;
-}
- 
-.about-right {
-  width: 48%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
- 
-.about-card {
-  background: linear-gradient(135deg, #07162f, #0d2b5b);
-  color: white;
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 15px 35px rgba(7, 22, 47, 0.2);
-}
- 
-.about-card-icon {
-  font-size: 26px;
-  color: #60a5fa;
+  letter-spacing: -.3px;
   margin-bottom: 16px;
 }
- 
-.about-card h3 {
-  font-size: 20px;
-  margin: 0 0 10px;
-}
- 
-.about-card p {
+
+.about-left h2 span { color: #60a5fa; }
+
+.about-left > p {
   font-size: 14.5px;
-  color: #d1d5db;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 28px;
 }
- 
-.standard-chips {
+
+.about-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+
+.about-list li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t), background var(--t);
 }
- 
+
+.about-list li:hover { background: var(--bg-raised); border-color: #253a56; }
+
+.about-list-icon {
+  width: 28px; height: 28px;
+  border-radius: var(--r-sm);
+  background: rgba(16,185,129,.1);
+  border: 1px solid rgba(16,185,129,.2);
+  color: var(--risk-safe);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0; margin-top: 1px;
+}
+
+.about-list h4 {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 3px; letter-spacing: .2px;
+}
+
+.about-list p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin: 0; }
+
+/* Right cards */
+.about-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+  opacity: .4;
+}
+
+.about-card-icon { font-size: 18px; color: #60a5fa; margin-bottom: 12px; }
+
+.about-card h3 {
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 8px; letter-spacing: .2px;
+}
+
+.about-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+.standard-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
 .standard-chips span {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #93c5fd;
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  background: var(--bg-raised);
+  border: 1px solid var(--bg-border);
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-muted); letter-spacing: .3px;
 }
- 
+
 .about-quote {
-  background: #f4f7fb;
-  border-left: 4px solid #2563eb;
-  border-radius: 14px;
-  padding: 28px 30px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-left: 3px solid var(--brand);
+  border-radius: var(--r-md);
+  padding: 20px;
 }
- 
-.quote-icon {
-  color: #2563eb;
-  font-size: 20px;
-  margin-bottom: 12px;
-}
- 
+
+.quote-icon { font-size: 16px; color: var(--brand); margin-bottom: 10px; }
+
 .about-quote p {
-  font-size: 15.5px;
-  font-style: italic;
-  color: #374151;
-  line-height: 1.7;
-  margin: 0 0 12px;
+  font-size: 13.5px; font-style: italic;
+  color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px;
 }
- 
-.about-quote span {
-  font-size: 13px;
-  color: #9ca3af;
-}
- 
-@media (max-width: 900px) {
-  .about {
-    flex-direction: column;
-  }
- 
-  .about-left,
-  .about-right {
-    width: 100%;
-    box-sizing: border-box;
-  }
- 
-  .about-left h2 {
-    font-size: 30px;
-  }
+
+.about-quote span { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: .3px; }
+
+@media (max-width: 860px) {
+  .about { flex-direction: column; gap: 36px; padding: 48px var(--gutter); }
+  .about-right { flex: none; width: 100%; }
 }

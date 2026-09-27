@@ -1,46 +1,26 @@
 import "./Stats.css";
-import {
-  FaClipboardCheck,
-  FaChartLine,
-  FaShieldAlt,
-  FaUsers,
-} from "react-icons/fa";
+import { FaClipboardCheck, FaChartLine, FaShieldAlt, FaGlobe } from "react-icons/fa";
+
+const STATS = [
+  { icon: <FaClipboardCheck />, value: "10,000+", label: "scans_performed" },
+  { icon: <FaChartLine />,      value: "98.2%",   label: "detection_accuracy" },
+  { icon: <FaShieldAlt />,      value: "5",        label: "risk_categories" },
+  { icon: <FaGlobe />,          value: "3.2s",     label: "avg_scan_time" },
+];
 
 function Stats() {
   return (
-    <section className="stats">
-      <div className="stat-card">
-        <FaClipboardCheck className="stat-icon" />
-
-        <h2>10,000+</h2>
-
-        <p>Scans Performed</p>
-      </div>
-
-      <div className="stat-card">
-        <FaChartLine className="stat-icon" />
-
-        <h2>98%</h2>
-
-        <p>Accuracy in Phishing Detection</p>
-      </div>
-
-      <div className="stat-card">
-        <FaShieldAlt className="stat-icon" />
-
-        <h2>15+</h2>
-
-        <p>Security & Trust Indicators</p>
-      </div>
-
-      <div className="stat-card">
-        <FaUsers className="stat-icon" />
-
-        <h2>5,000+</h2>
-
-        <p>Websites Analyzed</p>
-      </div>
-    </section>
+    <div className="stats">
+      {STATS.map((s, i) => (
+        <div className="stat-card" key={i}>
+          <div className="stat-icon-wrap">{s.icon}</div>
+          <div className="stat-text">
+            <div className="stat-value">{s.value}</div>
+            <div className="stat-label">{s.label}</div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 

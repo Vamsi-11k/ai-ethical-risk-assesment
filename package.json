@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "setup:ml": "cd ml-service && python -m venv .venv && .venv\\Scripts\\pip install -r requirements.txt && .venv\\Scripts\\python model\\train.py",
     "dev:frontend": "npm run dev --prefix frontend",
     "dev:backend": "npm run dev --prefix backend",
-    "dev:ml": "cd ml-service && .venv\\Scripts\\python -m uvicorn main:app --port 8000 --reload",
+    "dev:ml": "cd ml-service && .venv\\Scripts\\python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload",
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ml\""
   },
   "devDependencies": {

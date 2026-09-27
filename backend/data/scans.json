@@ -1,0 +1,3636 @@
+[
+  {
+    "_id": "6aa91717ce7ae09755597d71",
+    "id": "6aa91717ce7ae09755597d71",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://netmirror.com",
+    "trustScore": 80,
+    "riskScore": 20,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website lacks a valid SSL/TLS certificate or uses insecure HTTP.",
+        "passed": false
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "SSL/TLS Security: Install a valid SSL certificate from a trusted Certificate Authority (CA)."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 0,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": -1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": -1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 0,
+      "overall_detection_confidence": 0,
+      "categories": {}
+    },
+    "createdAt": "2026-09-15T09:59:51.504Z",
+    "updatedAt": "2026-09-15T09:59:51.504Z"
+  },
+  {
+    "_id": "6aa9078fce7ae09755597d70",
+    "id": "6aa9078fce7ae09755597d70",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://netmirror.com",
+    "trustScore": 80,
+    "riskScore": 20,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website lacks a valid SSL/TLS certificate or uses insecure HTTP.",
+        "passed": false
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "SSL/TLS Security: Install a valid SSL certificate from a trusted Certificate Authority (CA)."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 0,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": -1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": -1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 0,
+      "overall_detection_confidence": 0,
+      "categories": {}
+    },
+    "createdAt": "2026-09-15T08:53:35.358Z",
+    "updatedAt": "2026-09-15T08:53:35.358Z"
+  },
+  {
+    "_id": "6aa90749ce7ae09755597d6f",
+    "id": "6aa90749ce7ae09755597d6f",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://facebook.com",
+    "trustScore": 95,
+    "riskScore": 5,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Domain Registration Length: Domain is registered for more than one year into the future.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 0,
+      "Links_in_tags": 1,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 80,
+      "categories": {
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T08:52:25.619Z",
+    "updatedAt": "2026-09-15T08:52:25.619Z"
+  },
+  {
+    "_id": "6aa8f786ce7ae09755597d6e",
+    "id": "6aa8f786ce7ae09755597d6e",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://facebook.com",
+    "trustScore": 95,
+    "riskScore": 5,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Domain Registration Length: Domain is registered for more than one year into the future.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 0,
+      "Links_in_tags": 1,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 80,
+      "categories": {
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T07:45:10.823Z",
+    "updatedAt": "2026-09-15T07:45:10.823Z"
+  },
+  {
+    "_id": "6aa8f1d8ce7ae09755597d6d",
+    "id": "6aa8f1d8ce7ae09755597d6d",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://facebook.com",
+    "trustScore": 95,
+    "riskScore": 5,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Domain Registration Length: Domain is registered for more than one year into the future.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 0,
+      "Links_in_tags": 1,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 80,
+      "categories": {
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T07:20:56.627Z",
+    "updatedAt": "2026-09-15T07:20:56.627Z"
+  },
+  {
+    "_id": "6aa8eea8ce7ae09755597d6c",
+    "id": "6aa8eea8ce7ae09755597d6c",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://leetcode.com/",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 88,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 86,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 91,
+              "evidence": [
+                "Content-Security-Policy meta tag enforced in HTML",
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T07:07:20.034Z",
+    "updatedAt": "2026-09-15T07:07:20.034Z"
+  },
+  {
+    "_id": "6aa8ea4bce7ae09755597d6b",
+    "id": "6aa8ea4bce7ae09755597d6b",
+    "user": null,
+    "userId": null,
+    "url": "https://sexvideoshost.com",
+    "trustScore": 55,
+    "riskScore": 45,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website lacks a valid SSL/TLS certificate or uses insecure HTTP.",
+        "passed": false
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Google Search Index: Website is not indexed by Google, indicating a blocked or hidden status.",
+        "passed": false
+      }
+    ],
+    "suggestions": [
+      "SSL/TLS Security: Install a valid SSL certificate from a trusted Certificate Authority (CA).",
+      "Web Popularity Index: Focus on search engine optimization and traffic growth.",
+      "Google Search Index: Request Google Search indexing through Google Search Console."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": -1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 0,
+      "age_of_domain": 0,
+      "Domain_registeration_length": 0,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": -1,
+      "web_traffic": -1,
+      "Page_Rank": -1,
+      "Google_Index": -1,
+      "Links_pointing_to_page": -1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 0,
+      "overall_detection_confidence": 0,
+      "categories": {}
+    },
+    "createdAt": "2026-09-15T06:48:43.626Z",
+    "updatedAt": "2026-09-15T06:48:43.626Z"
+  },
+  {
+    "_id": "6aa8ea24ce7ae09755597d6a",
+    "id": "6aa8ea24ce7ae09755597d6a",
+    "user": null,
+    "userId": null,
+    "url": "https://pornhub.com",
+    "trustScore": 90,
+    "riskScore": 10,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Metadata Link Integrity: High percentage of header scripts and stylesheets are sourced from external domains.",
+        "passed": false
+      }
+    ],
+    "suggestions": [
+      "Metadata Link Integrity: Audit external script sources and host core stylesheets locally."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": -1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": -1,
+      "Submitting_to_email": -1,
+      "Iframe": -1,
+      "on_mouseover": 1,
+      "RightClick": -1,
+      "popUpWidnow": -1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 76,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 65,
+          "technologies": [
+            {
+              "name": "Vue.js",
+              "category": "Frontend",
+              "subcategory": "JavaScript Framework",
+              "version": "Version: Not detected",
+              "confidence": 65,
+              "evidence": [
+                "Vue.js runtime library detected in script src"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "reCAPTCHA",
+              "category": "Security",
+              "subcategory": "Bot & Abuse Prevention",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "reCAPTCHA form container 'g-recaptcha' detected in HTML",
+                "reCAPTCHA sitekey configuration attribute detected in HTML"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Automated bot verification is deployed to safeguard interactive endpoints against credential stuffing and automated abuse."
+            },
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:48:04.694Z",
+    "updatedAt": "2026-09-15T06:48:04.694Z"
+  },
+  {
+    "_id": "6aa8e9eece7ae09755597d69",
+    "id": "6aa8e9eece7ae09755597d69",
+    "user": null,
+    "userId": null,
+    "url": "https://xhamster.com",
+    "trustScore": 98,
+    "riskScore": 2,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Domain Registration Length: Domain is registered for more than one year into the future.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": -1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": -1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 6,
+      "overall_detection_confidence": 82,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "Foundation",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Foundation responsive grid classes detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:47:10.225Z",
+    "updatedAt": "2026-09-15T06:47:10.225Z"
+  },
+  {
+    "_id": "6aa8e957ce7ae09755597d68",
+    "id": "6aa8e957ce7ae09755597d68",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://grok.com/",
+    "trustScore": 100,
+    "riskScore": 0,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": -1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": -1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 7,
+      "overall_detection_confidence": 83,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 72,
+          "technologies": [
+            {
+              "name": "Next.js",
+              "category": "Frontend",
+              "subcategory": "React Framework",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "Next.js static assets directory '/_next/static/' detected",
+                "Next.js chunk detected in script src"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            },
+            {
+              "name": "Tailwind CSS",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Tailwind utility classes pattern detected in HTML"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 99,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 99,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response",
+                "Cloudflare bot management cookie '__cf_bm' detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:44:39.035Z",
+    "updatedAt": "2026-09-15T06:44:39.035Z"
+  },
+  {
+    "_id": "6aa8e942ce7ae09755597d67",
+    "id": "6aa8e942ce7ae09755597d67",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://leetcode.com/",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 88,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 86,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 91,
+              "evidence": [
+                "Content-Security-Policy meta tag enforced in HTML",
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:44:18.709Z",
+    "updatedAt": "2026-09-15T06:44:18.709Z"
+  },
+  {
+    "_id": "6aa8e4dace7ae09755597d66",
+    "id": "6aa8e4dace7ae09755597d66",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://hole.cert.pl/domains/v2/domains.csv",
+    "trustScore": 70,
+    "riskScore": 30,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website lacks a valid SSL/TLS certificate or uses insecure HTTP.",
+        "passed": false
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain uses multiple subdomain levels, which can hide the real host name.",
+        "passed": false
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "SSL/TLS Security: Install a valid SSL certificate from a trusted Certificate Authority (CA).",
+      "Web Popularity Index: Focus on search engine optimization and traffic growth.",
+      "Subdomain Count: Reduce the number of subdomain levels (e.g. combine records)."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 0,
+      "SSLfinal_State": 0,
+      "age_of_domain": 0,
+      "Domain_registeration_length": 0,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 0,
+      "Page_Rank": -1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": -1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 0,
+      "overall_detection_confidence": 0,
+      "categories": {}
+    },
+    "createdAt": "2026-09-15T06:25:30.330Z",
+    "updatedAt": "2026-09-15T06:25:30.330Z"
+  },
+  {
+    "_id": "6aa8e45ace7ae09755597d65",
+    "id": "6aa8e45ace7ae09755597d65",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://dark-patterns.com",
+    "trustScore": 34,
+    "riskScore": 66,
+    "riskLevel": "High",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website lacks a valid SSL/TLS certificate or uses insecure HTTP.",
+        "passed": false
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Google Search Index: Website is not indexed by Google, indicating a blocked or hidden status.",
+        "passed": false
+      },
+      {
+        "label": "Metadata Link Integrity: Header scripts, meta tags, and style sheets are mostly hosted locally.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "SSL/TLS Security: Install a valid SSL certificate from a trusted Certificate Authority (CA).",
+      "Web Popularity Index: Focus on search engine optimization and traffic growth.",
+      "Google Search Index: Request Google Search indexing through Google Search Console."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": -1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 0,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": -1,
+      "web_traffic": -1,
+      "Page_Rank": -1,
+      "Google_Index": -1,
+      "Links_pointing_to_page": -1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 0,
+      "overall_detection_confidence": 0,
+      "categories": {}
+    },
+    "createdAt": "2026-09-15T06:23:22.564Z",
+    "updatedAt": "2026-09-15T06:23:22.564Z"
+  },
+  {
+    "_id": "6aa8e44cce7ae09755597d64",
+    "id": "6aa8e44cce7ae09755597d64",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://openai.com",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 4,
+      "overall_detection_confidence": 88,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 99,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 99,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response",
+                "Cloudflare bot management cookie '__cf_bm' detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:23:08.159Z",
+    "updatedAt": "2026-09-15T06:23:08.159Z"
+  },
+  {
+    "_id": "6aa8e414ce7ae09755597d63",
+    "id": "6aa8e414ce7ae09755597d63",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://facebook.com",
+    "trustScore": 95,
+    "riskScore": 5,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Domain Registration Length: Domain is registered for more than one year into the future.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": -1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 0,
+      "Links_in_tags": 1,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 80,
+      "categories": {
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:22:12.793Z",
+    "updatedAt": "2026-09-15T06:22:12.793Z"
+  },
+  {
+    "_id": "6aa8e1cdce7ae09755597d62",
+    "id": "6aa8e1cdce7ae09755597d62",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://chatgpt.com",
+    "trustScore": 75,
+    "riskScore": 25,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": -1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 4,
+      "overall_detection_confidence": 88,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 99,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 99,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response",
+                "Cloudflare bot management cookie '__cf_bm' detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T06:12:29.254Z",
+    "updatedAt": "2026-09-15T06:12:29.254Z"
+  },
+  {
+    "_id": "6aa8cc55ce7ae09755597d61",
+    "id": "6aa8cc55ce7ae09755597d61",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://netmirror.center/",
+    "trustScore": 60,
+    "riskScore": 40,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "URL Redirection Count: URL has minimal or no redirect hops.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Web Popularity Index: Focus on search engine optimization and traffic growth."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": -1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 0,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 2,
+      "overall_detection_confidence": 91,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:40:53.019Z",
+    "updatedAt": "2026-09-15T04:40:53.019Z"
+  },
+  {
+    "_id": "6aa8cbf5ce7ae09755597d60",
+    "id": "6aa8cbf5ce7ae09755597d60",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://animesuge.cz/",
+    "trustScore": 90,
+    "riskScore": 10,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Web Popularity Index: Focus on search engine optimization and traffic growth."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 0,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 0,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 6,
+      "overall_detection_confidence": 76,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 70,
+          "technologies": [
+            {
+              "name": "Bootstrap",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "4.6.1",
+              "confidence": 85,
+              "evidence": [
+                "Bootstrap-specific grid classes detected in HTML",
+                "Bootstrap JavaScript bundle detected in script tag"
+              ],
+              "security_status": "Potential Concern",
+              "security_insight": "Legacy Bootstrap major release detected. Consider upgrading to modern Bootstrap 5 for improved accessibility and current security maintenance."
+            },
+            {
+              "name": "Tailwind CSS",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Tailwind utility classes pattern detected in HTML"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            },
+            {
+              "name": "jQuery",
+              "category": "Frontend",
+              "subcategory": "JavaScript Library",
+              "version": "1.12.4",
+              "confidence": 65,
+              "evidence": [
+                "jQuery script library detected in script src"
+              ],
+              "security_status": "Potential Concern",
+              "security_insight": "Legacy jQuery version detected (prior to 3.5.0). Older releases may contain known cross-site scripting (XSS) or prototype pollution issues; consider upgrading to jQuery 3.7+."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 75,
+          "technologies": [
+            {
+              "name": "reCAPTCHA",
+              "category": "Security",
+              "subcategory": "Bot & Abuse Prevention",
+              "version": "Version: Not detected",
+              "confidence": 65,
+              "evidence": [
+                "Google reCAPTCHA API client script loaded"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Automated bot verification is deployed to safeguard interactive endpoints against credential stuffing and automated abuse."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:39:17.620Z",
+    "updatedAt": "2026-09-15T04:39:17.620Z"
+  },
+  {
+    "_id": "6aa8cbcace7ae09755597d5f",
+    "id": "6aa8cbcace7ae09755597d5f",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://animesuge.cz/",
+    "trustScore": 90,
+    "riskScore": 10,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Web Popularity Index: Focus on search engine optimization and traffic growth."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 0,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 0,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 6,
+      "overall_detection_confidence": 76,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 70,
+          "technologies": [
+            {
+              "name": "Bootstrap",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "4.6.1",
+              "confidence": 85,
+              "evidence": [
+                "Bootstrap-specific grid classes detected in HTML",
+                "Bootstrap JavaScript bundle detected in script tag"
+              ],
+              "security_status": "Potential Concern",
+              "security_insight": "Legacy Bootstrap major release detected. Consider upgrading to modern Bootstrap 5 for improved accessibility and current security maintenance."
+            },
+            {
+              "name": "Tailwind CSS",
+              "category": "Frontend",
+              "subcategory": "CSS Framework",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Tailwind utility classes pattern detected in HTML"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            },
+            {
+              "name": "jQuery",
+              "category": "Frontend",
+              "subcategory": "JavaScript Library",
+              "version": "1.12.4",
+              "confidence": 65,
+              "evidence": [
+                "jQuery script library detected in script src"
+              ],
+              "security_status": "Potential Concern",
+              "security_insight": "Legacy jQuery version detected (prior to 3.5.0). Older releases may contain known cross-site scripting (XSS) or prototype pollution issues; consider upgrading to jQuery 3.7+."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 75,
+          "technologies": [
+            {
+              "name": "reCAPTCHA",
+              "category": "Security",
+              "subcategory": "Bot & Abuse Prevention",
+              "version": "Version: Not detected",
+              "confidence": 65,
+              "evidence": [
+                "Google reCAPTCHA API client script loaded"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Automated bot verification is deployed to safeguard interactive endpoints against credential stuffing and automated abuse."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:38:34.935Z",
+    "updatedAt": "2026-09-15T04:38:34.935Z"
+  },
+  {
+    "_id": "6aa8c8a8ce7ae09755597d5e",
+    "id": "6aa8c8a8ce7ae09755597d5e",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://leetcode.com/",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 88,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 86,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 91,
+              "evidence": [
+                "Content-Security-Policy meta tag enforced in HTML",
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "Permissions Policy",
+              "category": "Security",
+              "subcategory": "Feature & Sensor Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Permissions-Policy' header restricts browser features and device APIs"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Permissions-Policy header is configured, limiting browser access to sensitive features like camera, microphone, and geolocation."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:25:12.110Z",
+    "updatedAt": "2026-09-15T04:25:12.110Z"
+  },
+  {
+    "_id": "6aa8c7e9ce7ae09755597d5d",
+    "id": "6aa8c7e9ce7ae09755597d5d",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://www.google.com/",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": -1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 1,
+      "overall_detection_confidence": 85,
+      "categories": {
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:22:01.249Z",
+    "updatedAt": "2026-09-15T04:22:01.249Z"
+  },
+  {
+    "_id": "6aa8c420ce7ae09755597d5c",
+    "id": "6aa8c420ce7ae09755597d5c",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://www.google.com/",
+    "trustScore": 99,
+    "riskScore": 1,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": -1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 1,
+      "overall_detection_confidence": 85,
+      "categories": {
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:05:52.684Z",
+    "updatedAt": "2026-09-15T04:05:52.684Z"
+  },
+  {
+    "_id": "6aa8c3eace7ae09755597d5b",
+    "id": "6aa8c3eace7ae09755597d5b",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://netmirror.center/",
+    "trustScore": 60,
+    "riskScore": 40,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has little to no traffic, typical of new or malicious domains.",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "URL Redirection Count: URL has minimal or no redirect hops.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Web Popularity Index: Focus on search engine optimization and traffic growth."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": -1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 0,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 2,
+      "overall_detection_confidence": 91,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:04:58.200Z",
+    "updatedAt": "2026-09-15T04:04:58.200Z"
+  },
+  {
+    "_id": "6aa8c3c7ce7ae09755597d5a",
+    "id": "6aa8c3c7ce7ae09755597d5a",
+    "user": "6aa8c3a7ce7ae09755597d59",
+    "userId": "6aa8c3a7ce7ae09755597d59",
+    "url": "https://movierulzio.com/",
+    "trustScore": 60,
+    "riskScore": 40,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "URL Redirection Count: URL has minimal or no redirect hops.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": -1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 1,
+      "SFH": -1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": -1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 3,
+      "overall_detection_confidence": 81,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 87,
+          "technologies": [
+            {
+              "name": "jQuery",
+              "category": "Frontend",
+              "subcategory": "JavaScript Library",
+              "version": "3.7.1",
+              "confidence": 87,
+              "evidence": [
+                "jQuery script library detected in script src",
+                "Official jQuery CDN script URL detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "backend": {
+          "title": "Backend / Framework",
+          "icon": "⚙️",
+          "summary_key": "Backend",
+          "confidence": 60,
+          "technologies": [
+            {
+              "name": "PHP",
+              "category": "Backend / Framework",
+              "subcategory": "Programming Language",
+              "version": "Version: Not detected",
+              "confidence": 60,
+              "evidence": [
+                "Direct PHP script link (.php) detected in DOM"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:04:23.867Z",
+    "updatedAt": "2026-09-15T04:04:23.867Z"
+  },
+  {
+    "_id": "6aa8c37ace7ae09755597d58",
+    "id": "6aa8c37ace7ae09755597d58",
+    "user": "6aa8c301ce7ae09755597d54",
+    "userId": "6aa8c301ce7ae09755597d54",
+    "url": "https://python.org",
+    "trustScore": 98,
+    "riskScore": 2,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": 0,
+      "Links_in_tags": 0,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 5,
+      "overall_detection_confidence": 81,
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "🎨",
+          "summary_key": "Frontend",
+          "confidence": 65,
+          "technologies": [
+            {
+              "name": "jQuery",
+              "category": "Frontend",
+              "subcategory": "JavaScript Library",
+              "version": "1.8.2",
+              "confidence": 65,
+              "evidence": [
+                "jQuery script library detected in script src"
+              ],
+              "security_status": "Potential Concern",
+              "security_insight": "Legacy jQuery version detected (prior to 3.5.0). Older releases may contain known cross-site scripting (XSS) or prototype pollution issues; consider upgrading to jQuery 3.7+."
+            }
+          ]
+        },
+        "web_server": {
+          "title": "Web Server",
+          "icon": "🖥️",
+          "summary_key": "Web Server",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "Nginx",
+              "category": "Web Server",
+              "subcategory": "HTTP Web Server",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP response header 'Server: nginx' detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "No immediate security concern identified."
+            }
+          ]
+        },
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "Fastly",
+              "category": "CDN / Infrastructure",
+              "subcategory": "Edge Cloud Platform",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "Fastly edge cache node signature in 'X-Served-By' header detected"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Fastly infrastructure detected; routes traffic through global edge distribution with origin shielding."
+            }
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:03:06.019Z",
+    "updatedAt": "2026-09-15T04:03:06.019Z"
+  },
+  {
+    "_id": "6aa8c36ace7ae09755597d57",
+    "id": "6aa8c36ace7ae09755597d57",
+    "user": "6aa8c368ce7ae09755597d56",
+    "userId": "6aa8c368ce7ae09755597d56",
+    "url": "https://github.com",
+    "trustScore": 100,
+    "riskScore": 0,
+    "riskLevel": "Low",
+    "reasons": [
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Anchor Link Validity: Anchor links lead to valid internal pages or verified external domains.",
+        "passed": true
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "No critical issues found. Maintain current configuration and monitor SSL certificates."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": 1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": -1,
+      "URL_of_Anchor": 1,
+      "Links_in_tags": 0,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 1,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 3,
+      "overall_detection_confidence": 85,
+      "categories": {
+        "security": {
+          "title": "Security",
+          "icon": "🔐",
+          "summary_key": "Security",
+          "confidence": 85,
+          "technologies": [
+            {
+              "name": "HSTS",
+              "category": "Security",
+              "subcategory": "Transport Security Header",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Strict-Transport-Security' header enforces encrypted HTTPS connections"
+              ],
+              "security_status": "Informational",
+              "security_insight": "HTTP Strict Transport Security (HSTS) is actively enforced, preventing man-in-the-middle protocol downgrade attacks."
+            },
+            {
+              "name": "Content Security Policy",
+              "category": "Security",
+              "subcategory": "Content Isolation Policy",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'Content-Security-Policy' response header enforced by server"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Content Security Policy (CSP) is actively enforced, restricting unauthorized script execution and mitigating Cross-Site Scripting (XSS)."
+            },
+            {
+              "name": "X-Frame-Options (Clickjacking Protection)",
+              "category": "Security",
+              "subcategory": "Frame Embedding Control",
+              "version": "Version: Not detected",
+              "confidence": 85,
+              "evidence": [
+                "HTTP 'X-Frame-Options' header defends against clickjacking iframe attacks"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Frame embedding is restricted, defending visitors against UI redressing and clickjacking exploits."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:02:50.857Z",
+    "updatedAt": "2026-09-15T04:02:50.857Z"
+  },
+  {
+    "_id": "6aa8c311ce7ae09755597d55",
+    "id": "6aa8c311ce7ae09755597d55",
+    "user": "6aa8c301ce7ae09755597d54",
+    "userId": "6aa8c301ce7ae09755597d54",
+    "url": "https://example.com",
+    "trustScore": 78,
+    "riskScore": 22,
+    "riskLevel": "Medium",
+    "reasons": [
+      {
+        "label": "Anchor Link Validity: High percentage of anchor links lead to external domains or empty anchors ('#').",
+        "passed": false
+      },
+      {
+        "label": "Domain Hyphen Check: Domain name does not contain hyphens, a style rarely seen in phishing.",
+        "passed": true
+      },
+      {
+        "label": "SSL/TLS Security: Website enforces a valid, trusted SSL/TLS certificate over HTTPS.",
+        "passed": true
+      },
+      {
+        "label": "Web Popularity Index: Domain has high traffic records, indicating an established presence.",
+        "passed": true
+      },
+      {
+        "label": "Subdomain Count: Domain has a safe number of subdomains (under 3 levels).",
+        "passed": true
+      },
+      {
+        "label": "Server Form Handler: Forms submit data to active, local handlers or trusted third parties.",
+        "passed": true
+      }
+    ],
+    "suggestions": [
+      "Anchor Link Validity: Remove dead anchors ('#') and link only to verified active pages."
+    ],
+    "rawFeatures": {
+      "having_IP_Address": 1,
+      "URL_Length": 1,
+      "Shortining_Service": 1,
+      "having_At_Symbol": 1,
+      "double_slash_redirecting": 1,
+      "Prefix_Suffix": 1,
+      "having_Sub_Domain": 1,
+      "SSLfinal_State": 1,
+      "age_of_domain": 1,
+      "Domain_registeration_length": -1,
+      "Favicon": 1,
+      "port": 1,
+      "HTTPS_token": 1,
+      "Request_URL": 1,
+      "URL_of_Anchor": -1,
+      "Links_in_tags": 1,
+      "SFH": 1,
+      "Submitting_to_email": 1,
+      "Iframe": 1,
+      "on_mouseover": 1,
+      "RightClick": 1,
+      "popUpWidnow": 1,
+      "Abnormal_URL": 1,
+      "Redirect": 1,
+      "DNSRecord": 1,
+      "web_traffic": 1,
+      "Page_Rank": 1,
+      "Google_Index": 1,
+      "Links_pointing_to_page": 0,
+      "Statistical_report": 1
+    },
+    "techStack": {
+      "total_detected": 1,
+      "overall_detection_confidence": 97,
+      "categories": {
+        "cdn_infrastructure": {
+          "title": "CDN / Infrastructure",
+          "icon": "☁️",
+          "summary_key": "Infrastructure",
+          "confidence": 97,
+          "technologies": [
+            {
+              "name": "Cloudflare",
+              "category": "CDN / Infrastructure",
+              "subcategory": "CDN & Edge Network",
+              "version": "Version: Not detected",
+              "confidence": 97,
+              "evidence": [
+                "HTTP response header 'Server: cloudflare' detected",
+                "Cloudflare Ray ID header 'CF-Ray' detected in response"
+              ],
+              "security_status": "Informational",
+              "security_insight": "Cloudflare edge network detected. Provides CDN performance and potential DDoS/WAF protection, though specific active security rules cannot be validated remotely."
+            }
+          ]
+        }
+      }
+    },
+    "createdAt": "2026-09-15T04:01:21.496Z",
+    "updatedAt": "2026-09-15T04:01:21.496Z"
+  }
+]

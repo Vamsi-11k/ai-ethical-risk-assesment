@@ -1,58 +1,34 @@
 import "./HowItWorks.css";
-import {
-  FaUpload,
-  FaBrain,
-  FaChartBar,
-  FaLightbulb,
-  FaFileDownload,
-} from "react-icons/fa";
+
+const STEPS = [
+  { title: "01_input_url",           desc: "Paste any URL into the scanner bar. No account required for a basic audit.",           tag: "input" },
+  { title: "02_domain_resolution",   desc: "The engine resolves the domain, fetches HTTP headers, and checks the SSL certificate.", tag: "network" },
+  { title: "03_policy_analysis",     desc: "Content is checked for privacy policy presence, terms of service, and consent signals.", tag: "nlp" },
+  { title: "04_threat_intelligence", desc: "Domain is cross-referenced with global phishing feeds and malicious URL databases.",    tag: "threat_intel" },
+  { title: "05_ethical_scoring",     desc: "All signals are weighted across five ethical categories to produce a 0–100 score.",     tag: "ml_model" },
+  { title: "06_report_generated",    desc: "Flagged issues are ranked by severity and returned with plain-language explanations.",  tag: "output" },
+];
 
 function HowItWorks() {
-  const steps = [
-    {
-      icon: <FaUpload />,
-      title: "Enter Website URL",
-      desc: "Input the full URL of the website you want to scan for trust and security indicators.",
-    },
-    {
-      icon: <FaBrain />,
-      title: "Scan & Audit",
-      desc: "Our engine inspects SSL records, security headers, domain registration, and threat intelligence.",
-    },
-    {
-      icon: <FaChartBar />,
-      title: "Calculate Trust Score",
-      desc: "Generate a consolidated Trust Score from 0 to 100 based on the checks passed.",
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "Identify Risk Levels",
-      desc: "Classify potential threats into Low, Medium, or High risk levels for review.",
-    },
-    {
-      icon: <FaFileDownload />,
-      title: "Get Suggestions",
-      desc: "Review clear suggestions to fix detected security flaws or privacy omissions.",
-    },
-  ];
-
   return (
     <section className="workflow" id="workflow">
-      <div className="workflow-header">
-        <h2>How It Works</h2>
-        <p>Audit any website's trust and security indicators in five simple steps.</p>
+      <div className="sec-head">
+        <div className="sec-label">pipeline</div>
+        <h2>How the audit runs</h2>
+        <p>Six deterministic stages run in under 4 seconds on every scan.</p>
       </div>
 
-      <div className="workflow-container">
-        {steps.map((step, index) => (
-          <div className="workflow-card" key={index}>
-            <div className="step-number">{index + 1}</div>
-
-            <div className="workflow-icon">{step.icon}</div>
-
-            <h3>{step.title}</h3>
-
-            <p>{step.desc}</p>
+      <div className="workflow-pipeline">
+        {STEPS.map((s, i) => (
+          <div className="workflow-step" key={i}>
+            <div className="step-node">
+              <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
+            </div>
+            <div className="step-body">
+              <div className="step-title">{s.title}</div>
+              <div className="step-desc">{s.desc}</div>
+              <span className="step-tag">{s.tag}</span>
+            </div>
           </div>
         ))}
       </div>

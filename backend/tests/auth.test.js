@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../app.js';
@@ -7,9 +8,21 @@ describe('Auth Endpoints', () => {
   beforeAll(async () => {
     // Connect to separate test database
     if (mongoose.connection.readyState === 0) {
-      await mongoose.connect('mongodb://127.0.0.1:27017/ethicalai_test');
+      const baseUri = process.env.MONGODB_URI || process.env.MONGO_URI;
+      let testUri = 'mongodb://127.0.0.1:27017/ethicalai_test';
+      if (baseUri) {
+        try {
+          const parsed = new URL(baseUri);
+          parsed.pathname = '/ethicalai_test';
+          testUri = parsed.toString();
+        } catch {
+          testUri = baseUri;
+        }
+      }
+      await mongoose.connect(testUri, { serverSelectionTimeoutMS: 10000 });
     }
-  });
+    await User.deleteMany({});
+  }, 15000);
 
   afterEach(async () => {
     // Clear user collection

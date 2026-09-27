@@ -1,64 +1,29 @@
 import "./WhyChooseUs.css";
-import {
-  FaBolt,
-  FaRobot,
-  FaShieldAlt,
-  FaChartLine,
-  FaFilePdf,
-  FaGlobe,
-} from "react-icons/fa";
+import { FaBolt, FaRobot, FaLock, FaChartLine, FaCode, FaGlobe } from "react-icons/fa";
+
+const ITEMS = [
+  { icon: <FaBolt />,     title: "sub_4s_scan_time",       desc: "Full five-category ethical audit completes in under four seconds on average." },
+  { icon: <FaRobot />,    title: "ml_threat_detection",    desc: "Intelligent pattern recognition flags brand spoofing, dark patterns, and consent manipulation." },
+  { icon: <FaLock />,     title: "no_data_retention",      desc: "Scanned URLs and results are never stored beyond your session unless you are signed in." },
+  { icon: <FaChartLine />,title: "explainable_scores",     desc: "Every risk score shows the exact signals that contributed — no black box verdicts." },
+  { icon: <FaCode />,     title: "open_methodology",       desc: "Scoring methodology is documented and follows established AI ethics frameworks." },
+  { icon: <FaGlobe />,    title: "global_threat_coverage", desc: "Cross-references 15+ threat intelligence feeds covering phishing, malware, and fraud domains." },
+];
 
 function WhyChooseUs() {
-  const reasons = [
-    {
-      icon: <FaBolt />,
-      title: "Fast Assessment",
-      desc: "Analyze site status, SSL certificates, and security headers within seconds.",
-    },
-    {
-      icon: <FaRobot />,
-      title: "AI Powered",
-      desc: "Intelligent threat evaluation flags lookalike branding, domain spoofing, and reputation anomalies.",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Secure Platform",
-      desc: "Your searches and scan results are processed privately without exposing personal search logs.",
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Interactive Dashboard",
-      desc: "Visualize check checklists and risk flags in a clear, interactive web dashboard.",
-    },
-    {
-      icon: <FaFilePdf />,
-      title: "Professional Reports",
-      desc: "Generate downloadable PDF safety reports of any audited domain instantly.",
-    },
-    {
-      icon: <FaGlobe />,
-      title: "Global Compliance",
-      desc: "Check alignment with modern web security best practices, GDPR policies, and privacy standards.",
-    },
-  ];
-
   return (
     <section className="choose">
-      <div className="choose-title">
-        <h2>Why Choose Our Platform?</h2>
-
-        <p>
-          A complete website audit framework for evaluating security posture and user trust signals.
-        </p>
+      <div className="sec-head">
+        <div className="sec-label">rationale</div>
+        <h2>Why trust this scanner</h2>
+        <p>Designed for security teams, developers, and researchers who need auditability.</p>
       </div>
 
       <div className="choose-grid">
-        {reasons.map((item, index) => (
-          <div className="choose-card" key={index}>
+        {ITEMS.map((item, i) => (
+          <div className="choose-card" key={i}>
             <div className="choose-icon">{item.icon}</div>
-
             <h3>{item.title}</h3>
-
             <p>{item.desc}</p>
           </div>
         ))}

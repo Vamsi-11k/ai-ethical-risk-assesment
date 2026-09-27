@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/User.js';
 import AppError from '../utils/AppError.js';
 import asyncHandler from '../utils/asyncHandler.js';
+import * as storageService from '../services/storageService.js';
 
 export const protect = asyncHandler(async (req, res, next) => {
   let token;
@@ -19,7 +19,7 @@ export const protect = asyncHandler(async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id);
+    req.user = await storageService.findUserById(decoded.id);
     if (!req.user) {
       return next(new AppError('User belonging to this token no longer exists', 401));
     }
@@ -45,7 +45,7 @@ export const optionalAuth = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id) || null;
+    req.user = (await storageService.findUserById(decoded.id)) || null;
     next();
   } catch (error) {
     // Fail silently for optional authentication

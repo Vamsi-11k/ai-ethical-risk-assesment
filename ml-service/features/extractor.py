@@ -14,6 +14,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ethicalai-ml")
 
+from features.tech_detector import detect_technologies
+
 # Shortening service list
 SHORTENERS = {
     "bit.ly", "tinyurl.com", "t.co", "goo.gl", "shorte.st", "go2l.ink", "x.co", 
@@ -200,6 +202,7 @@ def extract_features(url: str) -> dict:
         logger.error(f"[DNS] Resolution failed for {input_domain}: {e}")
         
     # Attempt connecting to resolve final redirected URL and extract HTML
+    response = None
     if dns_resolved:
         try:
             response = requests.get(input_url, timeout=5, verify=False)
@@ -439,8 +442,12 @@ def extract_features(url: str) -> dict:
         "threat_db": threat_status    # "CLEAN" | "MALICIOUS" | "UNAVAILABLE"
     }
     
+    # Detect Technology Stack using the already-fetched response and parsed DOM
+    tech_stack = detect_technologies(response=response, soup=soup, domain=resolved_domain)
+    
     return {
         "features": features,
         "confidence": confidence,
-        "confidence_score": confidence_score
+        "confidence_score": confidence_score,
+        "tech_stack": tech_stack
     }

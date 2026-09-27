@@ -1,87 +1,85 @@
 import "./RiskCategories.css";
-import {
-  FaLock,
-  FaGlobe,
-  FaFileContract,
-  FaShieldAlt,
-  FaLink,
-  FaExclamationTriangle,
-} from "react-icons/fa";
+import { FaUserSecret, FaEye, FaBalanceScale, FaBrain, FaFileAlt } from "react-icons/fa";
+
+const CATS = [
+  {
+    icon: <FaUserSecret />,
+    name: "data_privacy",
+    desc: "Evaluates presence of a privacy policy, cookie consent, and personal data handling disclosures.",
+    weight: "25%",
+    status: "CRITICAL",
+    statusColor: "var(--risk-critical)",
+    statusBg: "rgba(239,68,68,.1)",
+  },
+  {
+    icon: <FaEye />,
+    name: "transparency",
+    desc: "Checks for clear terms of service, ownership disclosure, and identifiable contact information.",
+    weight: "20%",
+    status: "HIGH",
+    statusColor: "var(--risk-high)",
+    statusBg: "rgba(249,115,22,.1)",
+  },
+  {
+    icon: <FaBalanceScale />,
+    name: "bias_fairness",
+    desc: "Detects demographic targeting patterns, exclusionary language, and unfair content segmentation.",
+    weight: "20%",
+    status: "MEDIUM",
+    statusColor: "var(--risk-medium)",
+    statusBg: "rgba(245,158,11,.1)",
+  },
+  {
+    icon: <FaBrain />,
+    name: "manipulation_risk",
+    desc: "Identifies dark patterns, urgency triggers, social proof manipulation, and deceptive UX practices.",
+    weight: "20%",
+    status: "HIGH",
+    statusColor: "var(--risk-high)",
+    statusBg: "rgba(249,115,22,.1)",
+  },
+  {
+    icon: <FaFileAlt />,
+    name: "content_authenticity",
+    desc: "Validates SSL/TLS integrity, checks for phishing indicators, and cross-checks against threat feeds.",
+    weight: "15%",
+    status: "CRITICAL",
+    statusColor: "var(--risk-critical)",
+    statusBg: "rgba(239,68,68,.1)",
+  },
+];
 
 function RiskCategories() {
-  const risks = [
-    {
-      title: "HTTPS & SSL Verification",
-      value: 95,
-      color: "#10b981", // green
-      status: "Secure",
-      icon: <FaLock />,
-    },
-    {
-      title: "Domain Reputation & Age",
-      value: 85,
-      color: "#10b981", // green
-      status: "Trusted",
-      icon: <FaGlobe />,
-    },
-    {
-      title: "Privacy & Terms Presence",
-      value: 40,
-      color: "#f59e0b", // amber
-      status: "Warning",
-      icon: <FaFileContract />,
-    },
-    {
-      title: "Security Headers",
-      value: 55,
-      color: "#f59e0b", // amber
-      status: "Moderate",
-      icon: <FaShieldAlt />,
-    },
-    {
-      title: "Suspicious URL Patterns",
-      value: 20,
-      color: "#ef4444", // red
-      status: "High Risk",
-      icon: <FaLink />,
-    },
-    {
-      title: "Phishing Indicators",
-      value: 15,
-      color: "#ef4444", // red
-      status: "High Risk",
-      icon: <FaExclamationTriangle />,
-    },
-  ];
-
   return (
     <section className="risk-section">
-      <div className="risk-heading">
-        <h2>Risk Categories</h2>
-
-        <p>
-          Understand the critical indicators evaluated during our website trust
-          assessment.
-        </p>
+      <div className="sec-head">
+        <div className="sec-label">methodology</div>
+        <h2>Risk category reference</h2>
+        <p>Five weighted categories make up the final ethical trust score.</p>
       </div>
 
-      <div className="risk-grid">
-        {risks.map((risk, index) => (
-          <div className="risk-card" key={index}>
-            <div
-              className="circle"
-              style={{
-                background: `conic-gradient(${risk.color} ${risk.value * 3.6}deg,#e5e7eb 0deg)`,
-              }}
-            >
-              <div className="inner-circle" style={{ fontSize: "32px", color: risk.color }}>
-                {risk.icon}
-              </div>
+      <div className="risk-table">
+        <div className="risk-table-head">
+          <span className="risk-th">category</span>
+          <span className="risk-th">what we check</span>
+          <span className="risk-th">weight</span>
+          <span className="risk-th">impact</span>
+        </div>
+        {CATS.map((c, i) => (
+          <div className="risk-row" key={i}>
+            <div className="risk-cat-name">
+              {c.icon} {c.name}
             </div>
-
-            <h3>{risk.title}</h3>
-
-            <p style={{ color: risk.color }}>{risk.status}</p>
+            <div className="risk-cat-desc">{c.desc}</div>
+            <div className="risk-weight">{c.weight}</div>
+            <div className="risk-badge-cell">
+              <span
+                className="risk-badge"
+                style={{ color: c.statusColor, background: c.statusBg, border: `1px solid ${c.statusColor}33` }}
+              >
+                {c.status}
+              </span>
+            </div>
           </div>
         ))}
       </div>

@@ -99,6 +99,7 @@ def get_trust_score(input_data: UrlInput):
         features_dict = extraction_result["features"]
         confidence_dict = extraction_result["confidence"]
         confidence_score = extraction_result["confidence_score"]
+        tech_stack = extraction_result.get("tech_stack", {})
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
@@ -147,5 +148,6 @@ def get_trust_score(input_data: UrlInput):
         "confidence_score": confidence_score,
         "features": features_dict,
         "reasons": explanations["reasons"],
-        "suggestions": explanations["suggestions"]
+        "suggestions": explanations["suggestions"],
+        "tech_stack": tech_stack
     }

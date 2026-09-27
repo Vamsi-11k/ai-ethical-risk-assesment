@@ -1,14 +1,231 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ============================================================
+   GLOBAL DESIGN SYSTEM — AI Ethical Risk Scanner
+   Dark / Security Audit Aesthetic (Snyk / HIBP)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Core backgrounds */
+  --bg-base:      #080d13;   /* near-black navy */
+  --bg-surface:   #0d1520;   /* card surface */
+  --bg-raised:    #111c2d;   /* elevated card */
+  --bg-border:    #1a2840;   /* border/divider */
+  --bg-hover:     #162035;   /* hover state */
+
+  /* Text */
+  --text-primary:   #e2e8f0;
+  --text-secondary: #7a90a8;
+  --text-muted:     #3d5068;
+  --text-code:      #94b4d1;
+
+  /* Risk accent system — used ONLY for risk indicators */
+  --risk-critical: #ef4444;   /* 0-29 */
+  --risk-high:     #f97316;   /* 30-49 */
+  --risk-medium:   #f59e0b;   /* 50-69 */
+  --risk-low:      #22c55e;   /* 70-89 */
+  --risk-safe:     #10b981;   /* 90-100 */
+
+  /* Glow variants */
+  --glow-critical: rgba(239, 68,  68,  .25);
+  --glow-high:     rgba(249, 115, 22,  .25);
+  --glow-medium:   rgba(245, 158, 11,  .25);
+  --glow-low:      rgba(34,  197, 94,  .2);
+  --glow-safe:     rgba(16,  185, 129, .2);
+
+  /* Brand accent (used sparingly — UI chrome only) */
+  --brand:        #2563eb;
+  --brand-dim:    rgba(37, 99, 235, .18);
+  --brand-border: rgba(37, 99, 235, .35);
+
+  /* Fonts */
+  --font-ui:   'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Spacing */
+  --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
+  --sp-12: 48px;--sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+
+  /* Radius */
+  --r-sm: 4px;  --r-md: 6px;  --r-lg: 10px;
+  --r-xl: 14px; --r-2xl: 20px; --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,.5);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,.6);
+  --shadow-xl:  0 24px 64px rgba(0,0,0,.7);
+
+  /* Transitions */
+  --ease: cubic-bezier(.4,0,.2,1);
+  --t: 180ms var(--ease);
+  --t-slow: 350ms var(--ease);
+
+  --gutter: clamp(20px, 6%, 80px);
 }
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
+  font-family: var(--font-ui);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-.App {
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-ui); cursor: pointer; border: none; outline: none; }
+input, textarea, select { font-family: var(--font-ui); }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--bg-border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #253a56; }
+
+/* ---------- Noise texture overlay ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: .018;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============================================================
+   SHARED UTILITY CLASSES
+   ============================================================ */
+
+/* Monospace text (URLs, hashes, scores) */
+.mono { font-family: var(--font-mono); }
+
+/* Section wrapper */
+.section-wrap {
   width: 100%;
+  padding: var(--sp-20) var(--gutter);
+}
+
+/* Section header */
+.sec-head {
+  margin-bottom: var(--sp-12);
+}
+
+.sec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.sec-label::before {
+  content: "//";
+  color: var(--brand);
+  font-size: 13px;
+}
+
+.sec-head h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -.3px;
+  line-height: 1.25;
+}
+
+.sec-head p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Terminal-style card */
+.term-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--r-lg);
+}
+
+/* Risk color helpers */
+.risk-critical { color: var(--risk-critical); }
+.risk-high     { color: var(--risk-high); }
+.risk-medium   { color: var(--risk-medium); }
+.risk-low      { color: var(--risk-low); }
+.risk-safe     { color: var(--risk-safe); }
+
+/* Horizontal rule */
+.h-rule {
+  border: none;
+  border-top: 1px solid var(--bg-border);
+  margin: 0;
+}
+
+/* Badge / pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  white-space: nowrap;
+}
+
+/* Primary action button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  transition: background var(--t), transform var(--t), box-shadow var(--t);
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37,99,235,.4);
+}
+
+/* Ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--r-md);
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--bg-border);
+  transition: background var(--t), border-color var(--t), color var(--t);
+}
+.btn-ghost:hover {
+  background: var(--bg-hover);
+  border-color: #253a56;
+  color: var(--text-primary);
 }

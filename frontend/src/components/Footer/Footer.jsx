@@ -9,23 +9,19 @@ function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-logo">
-            <FaShieldAlt />
-            <span>RiskGuard AI</span>
+            <div className="footer-logo-icon">
+              <FaShieldAlt />
+            </div>
+            <span>EthicalAI</span>
           </div>
           <p>
             An AI-powered ethical risk assessment framework for teams building
             fair, private, secure, and compliant AI systems.
           </p>
           <div className="footer-socials">
-            <a href="#" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <FaLinkedin />
-            </a>
-            <a href="#" aria-label="GitHub">
-              <FaGithub />
-            </a>
+            <a href="#" aria-label="Twitter"><FaTwitter /></a>
+            <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="#" aria-label="GitHub"><FaGithub /></a>
           </div>
         </div>
 
@@ -33,8 +29,8 @@ function Footer() {
           <h4>Product</h4>
           <a href="#home">Home</a>
           <a href="#dashboard">Live Demo</a>
-          <a href="#riskcategories">Risk Categories</a>
-          <a href="#howitworks">How It Works</a>
+          <a href="#features">Features</a>
+          <a href="#workflow">How It Works</a>
         </div>
 
         <div className="footer-links">
@@ -55,7 +51,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {year} RiskGuard AI. All rights reserved.</p>
+        <p>© {year} EthicalAI. All rights reserved.</p>
         <div className="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>

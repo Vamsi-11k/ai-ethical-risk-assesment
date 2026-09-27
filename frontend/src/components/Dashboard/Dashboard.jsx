@@ -1,319 +1,513 @@
 import { useState, useEffect } from "react";
 import "./Dashboard.css";
+import TechStackSection from "./TechStackSection";
 import {
-  FaBolt,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaExclamationTriangle,
-  FaLock,
-  FaHistory,
+  FaShieldAlt, FaHistory, FaExclamationTriangle,
+  FaUserSecret, FaEye, FaBalanceScale,
+  FaBrain, FaFileAlt, FaSearch, FaArrowRight,
 } from "react-icons/fa";
 
-function scoreBand(v) {
-  if (v >= 80) return "low"; // High trust = Low risk (green)
-  if (v >= 50) return "medium"; // Medium trust = Medium risk (amber)
-  return "high"; // Low trust = High risk (red)
+/* ── helpers ─────────────────────────────────────────────── */
+function bandOf(v) {
+  if (v >= 90) return "safe";
+  if (v >= 70) return "low";
+  if (v >= 50) return "medium";
+  if (v >= 30) return "high";
+  return "critical";
 }
 
-function Dashboard({ user }) {
-  const [url, setUrl] = useState("");
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
-  const [history, setHistory] = useState([]);
+function verdictOf(v) {
+  if (v >= 90) return "Trusted";
+  if (v >= 70) return "Low Risk";
+  if (v >= 50) return "Moderate Risk";
+  if (v >= 30) return "High Risk";
+  return "Critical Risk";
+}
 
+function descOf(v) {
+  if (v >= 90) return "This site meets most ethical standards. Minor issues detected.";
+  if (v >= 70) return "Generally acceptable. Some areas require attention.";
+  if (v >= 50) return "Significant ethical concerns detected. Review before trusting.";
+  if (v >= 30) return "Serious ethical violations present. Use with caution.";
+  return "Critical ethical failures detected. Do not trust this site.";
+}
+
+/* Map band → CSS colour var */
+const BAND_COLOR = {
+  safe: "var(--risk-safe)",
+  low: "var(--risk-low)",
+  medium: "var(--risk-medium)",
+  high: "var(--risk-high)",
+  critical: "var(--risk-critical)",
+};
+
+/* ── Gauge SVG ───────────────────────────────────────────── */
+function Gauge({ score, band }) {
+  const R = 46;
+  const circ = 2 * Math.PI * R;
+  const offset = circ - (score / 100) * circ;
+  return (
+    <div className="score-gauge">
+      <svg viewBox="0 0 100 100">
+        <circle className="gauge-bg" cx="50" cy="50" r={R} />
+        <circle
+          className="gauge-fill"
+          cx="50" cy="50" r={R}
+          stroke={BAND_COLOR[band]}
+          strokeDasharray={circ}
+          strokeDashoffset={offset}
+          style={{ filter: `drop-shadow(0 0 6px ${BAND_COLOR[band]})` }}
+        />
+      </svg>
+      <div className="gauge-center">
+        <span className="gauge-score" style={{ color: BAND_COLOR[band] }}>{score}</span>
+        <span className="gauge-denom">/100</span>
+      </div>
+    </div>
+  );
+}
+
+/* ── Category bar row ────────────────────────────────────── */
+const CAT_ICONS = {
+  "data_privacy":        <FaUserSecret />,
+  "transparency":        <FaEye />,
+  "bias_fairness":       <FaBalanceScale />,
+  "manipulation_risk":   <FaBrain />,
+  "content_authenticity":<FaFileAlt />,
+};
+
+const CAT_LABELS = {
+  "data_privacy":        "data_privacy",
+  "transparency":        "transparency",
+  "bias_fairness":       "bias / fairness",
+  "manipulation_risk":   "manipulation_risk",
+  "content_authenticity":"content_auth",
+};
+
+function CategoryBar({ id, score }) {
+  const band = bandOf(score);
+  return (
+    <div className="cat-row">
+      <div className="cat-label">
+        {CAT_ICONS[id] || <FaShieldAlt />}
+        {CAT_LABELS[id] || id}
+      </div>
+      <div className="cat-bar-track">
+        <div
+          className="cat-bar-fill"
+          style={{ width: `${score}%`, background: BAND_COLOR[band] }}
+        />
+      </div>
+      <div className="cat-score" style={{ color: BAND_COLOR[band] }}>{score}</div>
+    </div>
+  );
+}
+
+/* ── Issue card ──────────────────────────────────────────── */
+function IssueCard({ issue }) {
+  const sev = issue.severity || "medium";
+  return (
+    <div className={`issue-card sev-${sev}`}>
+      <div className="issue-severity">
+        <div className="issue-sev-dot" />
+      </div>
+      <div className="issue-body">
+        <div className="issue-title">
+          {issue.label}
+          {issue.category && (
+            <span className="issue-cat-tag">{issue.category}</span>
+          )}
+        </div>
+        <div className="issue-desc">{issue.description}</div>
+        {issue.action && (
+          <div className="issue-action">{issue.action}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ── Scanning overlay ────────────────────────────────────── */
+const SCAN_STEPS = [
+  "resolving_domain",
+  "checking_ssl_certificate",
+  "auditing_privacy_policy",
+  "analyzing_content_patterns",
+  "scoring_ethical_indicators",
+];
+
+function ScanOverlay() {
+  const [activeStep, setActiveStep] = useState(0);
   useEffect(() => {
-    const fetchHistory = async () => {
-      if (!user) {
-        setHistory([]);
-        return;
-      }
+    const iv = setInterval(() => setActiveStep(s => Math.min(s + 1, SCAN_STEPS.length - 1)), 600);
+    return () => clearInterval(iv);
+  }, []);
+  return (
+    <div className="scan-overlay">
+      <div className="scan-spinner">
+        <div className="scan-spinner-ring" />
+        <div className="scan-spinner-ring" />
+        <div className="scan-spinner-ring" />
+      </div>
+      <div className="scan-status-text">running_ethical_audit…</div>
+      <div className="scan-progress-bar">
+        <div className="scan-progress-fill" />
+      </div>
+      <div className="scan-steps">
+        {SCAN_STEPS.map((s, i) => (
+          <div
+            key={s}
+            className={`scan-step ${i < activeStep ? "done" : i === activeStep ? "active" : ""}`}
+          >
+            <div className="scan-step-dot" />
+            {i < activeStep ? `✓ ${s}` : s}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── Build synthetic category scores from real API data ──── */
+function buildCategories(scanData) {
+  // If backend returns explicit category scores, use them
+  if (scanData.categories) return scanData.categories;
+
+  // Otherwise synthesise from available signals
+  const reasons = scanData.reasons || [];
+  const trust   = scanData.trustScore || 50;
+
+  const passed = (kw) => reasons.some(r => r.passed && r.label?.toLowerCase().includes(kw));
+  const failed = (kw) => reasons.some(r => !r.passed && r.label?.toLowerCase().includes(kw));
+
+  const clamped = (base, offset = 0) => Math.min(100, Math.max(0, base + offset));
+
+  return [
+    { id: "data_privacy",         score: clamped(trust, failed("privacy") ? -25 : passed("privacy") ? 10 : 0) },
+    { id: "transparency",         score: clamped(trust, failed("transparent") || failed("policy") ? -20 : 5) },
+    { id: "bias_fairness",        score: clamped(trust, -5) },
+    { id: "manipulation_risk",    score: clamped(100 - trust, -10) },
+    { id: "content_authenticity", score: clamped(trust, failed("phish") || failed("ssl") ? -30 : 0) },
+  ];
+}
+
+/* ── Build issues from API data ──────────────────────────── */
+function buildIssues(scanData) {
+  if (scanData.issues) return scanData.issues;
+
+  const reasons = scanData.reasons || [];
+  const suggestions = scanData.suggestions || [];
+  const trust = scanData.trustScore || 50;
+
+  const issues = reasons
+    .filter(r => !r.passed)
+    .map(r => {
+      const sev = trust < 30 ? "critical" : trust < 50 ? "high" : "medium";
+      return {
+        label: r.label,
+        description: r.detail || "This check did not pass during the audit.",
+        severity: sev,
+        category: r.category || "security",
+        action: suggestions.shift() || null,
+      };
+    });
+
+  // If all passed but trust is low, add a generic note
+  if (issues.length === 0 && trust < 70) {
+    issues.push({
+      label: "Overall trust score is below threshold",
+      description: "Despite individual checks, the aggregate risk score indicates potential concerns.",
+      severity: trust < 50 ? "high" : "medium",
+      category: "trust_score",
+      action: "Review the full site manually and verify against reputable sources.",
+    });
+  }
+
+  return issues;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN DASHBOARD COMPONENT
+   ═══════════════════════════════════════════════════════════ */
+function Dashboard({ user, scanUrl, isScanning: propScanning, onScanComplete }) {
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [result, setResult]           = useState(null);
+  const [error, setError]             = useState(null);
+  const [history, setHistory]         = useState([]);
+
+  const isScanning = propScanning || isAnalyzing;
+
+  // Fetch history on login
+  useEffect(() => {
+    if (!user) { setHistory([]); return; }
+    (async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("/api/scans", {
-          headers: {
-            "Authorization": `Bearer ${token}`,
-          },
-        });
-        const resJson = await response.json();
-        if (response.ok) {
-          setHistory(resJson.data || []);
-        }
-      } catch (err) {
-        console.error("Failed to fetch scan history:", err);
-      }
-    };
-
-    fetchHistory();
+        const res   = await fetch("/api/scans", { headers: { Authorization: `Bearer ${token}` } });
+        const json  = await res.json();
+        if (res.ok) setHistory(json.data || []);
+      } catch { /* silent */ }
+    })();
   }, [user]);
 
-  const runAnalysis = async (targetUrl) => {
+  // Trigger when parent passes a URL to scan
+  useEffect(() => {
+    if (scanUrl) runAnalysis(scanUrl);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scanUrl]);
+
+  async function runAnalysis(targetUrl) {
     setIsAnalyzing(true);
     setResult(null);
     setError(null);
 
     try {
-      const token = localStorage.getItem("token");
-      const headers = {
-        "Content-Type": "application/json",
-      };
-      
-      if (token) {
-        headers["Authorization"] = `Bearer ${token}`;
-      }
+      const token   = localStorage.getItem("token");
+      const headers = { "Content-Type": "application/json" };
+      if (token) headers["Authorization"] = `Bearer ${token}`;
 
-      const response = await fetch("/api/analyze", {
-        method: "POST",
-        headers,
+      const res  = await fetch("/api/analyze", {
+        method: "POST", headers,
         body: JSON.stringify({ url: targetUrl }),
       });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.message || "Scan failed.");
 
-      const resJson = await response.json();
+      const d = json.data;
+      const parsed = {
+        id:         d.id,
+        url:        d.url,
+        score:      d.trustScore,
+        riskLevel:  d.riskLevel,
+        scannedAt:  d.scannedAt || new Date().toISOString(),
+        categories: buildCategories(d),
+        issues:     buildIssues(d),
+        suggestions: d.suggestions || [],
+        techStack:  d.techStack || d.tech_stack || null,
+      };
+      setResult(parsed);
 
-      if (!response.ok) {
-        throw new Error(resJson.message || "Failed to analyze website. Verify the URL is valid.");
-      }
-
-      const scanData = resJson.data;
-
-      setResult({
-        url: scanData.url,
-        overall: scanData.trustScore,
-        risk: scanData.riskLevel,
-        checks: scanData.reasons, // Array of { label, passed }
-        notes: scanData.suggestions, // Array of strings
-      });
-
-      if (user) {
-        const newHistoryItem = {
-          id: scanData.id,
-          url: scanData.url,
-          trustScore: scanData.trustScore,
-          riskScore: scanData.riskScore,
-          riskLevel: scanData.riskLevel,
-          reasons: scanData.reasons,
-          suggestions: scanData.suggestions,
-          scannedAt: scanData.scannedAt || new Date().toISOString()
-        };
-        setHistory((prev) => {
-          const filtered = prev.filter((item) => item.id !== newHistoryItem.id);
-          return [newHistoryItem, ...filtered];
+      if (user && d.id) {
+        setHistory(prev => {
+          const filtered = prev.filter(h => h.id !== d.id);
+          const historyItem = {
+            id: d.id,
+            url: d.url,
+            trustScore: d.trustScore,
+            riskScore: d.riskScore,
+            riskLevel: d.riskLevel,
+            reasons: d.reasons,
+            suggestions: d.suggestions,
+            techStack: d.techStack || d.tech_stack || {},
+            scannedAt: parsed.scannedAt
+          };
+          return [historyItem, ...filtered];
         });
       }
     } catch (err) {
-      setError(err.message || "An unexpected error occurred during website scan.");
+      setError(err.message || "Unexpected error.");
     } finally {
       setIsAnalyzing(false);
+      if (onScanComplete) onScanComplete();
     }
-  };
+  }
 
-  const handleAnalyze = (e) => {
-    e.preventDefault();
-    if (!url.trim()) return;
-    runAnalysis(url.trim());
-  };
+  function loadFromHistory(item) {
+    if (item.reasons && item.reasons.length > 0) {
+      const parsed = {
+        id:         item.id,
+        url:        item.url,
+        score:      item.trustScore,
+        riskLevel:  item.riskLevel,
+        scannedAt:  item.scannedAt || new Date().toISOString(),
+        categories: buildCategories(item),
+        issues:     buildIssues(item),
+        suggestions: item.suggestions || [],
+        techStack:  item.techStack || item.tech_stack || null,
+      };
+      setResult(parsed);
+      setError(null);
+      setTimeout(() => {
+        const resultsEl = document.getElementById("results");
+        if (resultsEl) resultsEl.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    } else {
+      // Re-run live scan if full details are not yet cached
+      runAnalysis(item.url);
+    }
+  }
 
-  const handlePresetClick = (preset) => {
-    setUrl(preset);
-    runAnalysis(preset);
-  };
+  const renderHistoryPanel = () => (
+    <div className="history-panel">
+      <div className="panel-header">
+        <div className="panel-header-icon"><FaHistory /></div>
+        <span className="panel-title">scan_history</span>
+        {user && history.length > 0 && (
+          <span style={{ marginLeft: "auto", fontSize: "11px", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
+            {history.length} saved
+          </span>
+        )}
+      </div>
+      {!user ? (
+        <div className="history-empty">sign_in to save and view your previous scan history.</div>
+      ) : history.length === 0 ? (
+        <div className="history-empty">no previous scans yet. Scan a URL above to start building your audit history.</div>
+      ) : (
+        <div className="history-list">
+          {history.map(item => {
+            const b = bandOf(item.trustScore || 0);
+            return (
+              <div key={item.id} className="hist-row" onClick={() => loadFromHistory(item)}>
+                <div style={{ overflow: "hidden", flex: 1 }}>
+                  <div className="hist-url">{item.url}</div>
+                  <div className="hist-time">
+                    {new Date(item.scannedAt).toLocaleDateString([], { month: "short", day: "numeric" })}
+                    {" "}
+                    {new Date(item.scannedAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                  </div>
+                </div>
+                <span className={`hist-score band-${b}`}>{item.trustScore}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 
   return (
-    <section className="dashboard" id="dashboard">
-      <div className="dashboard-header">
-        <span className="badge dash-badge">
-          <FaBolt /> Live Risk Engine
-        </span>
-        <h2>See the Risk Engine in Action</h2>
-        <p>
-          Enter a website URL to run it through the trust analysis engine and see
-          a live risk checklist and security breakdown.
-        </p>
-      </div>
-
-      <div className="dashboard-grid">
-        <div style={{ display: "flex", flexDirection: "column", width: "38%", gap: "25px" }}>
-          <form className="dashboard-form" onSubmit={handleAnalyze} style={{ width: "100%" }}>
-            <h3>
-              <FaLock /> Website Scanner
-            </h3>
-
-            <label htmlFor="website-url">Website URL</label>
-            <input
-              id="website-url"
-              type="text"
-              placeholder="e.g. https://secure-bank.com"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              required
-            />
-
-            <div style={{ marginTop: "12px", fontSize: "13px", color: "#6b7280" }}>
-              Try:{" "}
-              <span
-                onClick={() => handlePresetClick("secure-bank.com")}
-                style={{ color: "#2563eb", cursor: "pointer", textDecoration: "underline", marginRight: "8px" }}
-              >
-                secure-bank.com
-              </span>
-              <span
-                onClick={() => handlePresetClick("shopping-dealz.net")}
-                style={{ color: "#2563eb", cursor: "pointer", textDecoration: "underline", marginRight: "8px" }}
-              >
-                shopping-dealz.net
-              </span>
-              <span
-                onClick={() => handlePresetClick("pay-invoice-verify.com")}
-                style={{ color: "#2563eb", cursor: "pointer", textDecoration: "underline" }}
-              >
-                pay-invoice-verify.com
-              </span>
-            </div>
-
-            <button type="submit" className="analyze-btn" disabled={isAnalyzing}>
-              {isAnalyzing ? "Scanning..." : "Scan Website"}
-            </button>
-          </form>
-
-          {/* Scan History list */}
-          <div className="dashboard-history" style={{ 
-            background: "white", 
-            borderRadius: "20px", 
-            padding: "30px", 
-            boxShadow: "0 15px 35px rgba(7, 22, 47, 0.08)",
-            width: "100%",
-            boxSizing: "border-box"
-          }}>
-            <h3 style={{ display: "flex", alignItems: "center", gap: "10px", margin: "0 0 20px 0", fontSize: "18px", color: "#07162f" }}>
-              <FaHistory /> Scan History
-            </h3>
-
-            {!user ? (
-              <p style={{ color: "#6b7280", fontSize: "14px", margin: 0, lineHeight: "1.6" }}>
-                Sign in to save and view your previous scan history.
-              </p>
-            ) : history.length === 0 ? (
-              <p style={{ color: "#6b7280", fontSize: "14px", margin: 0, lineHeight: "1.6" }}>
-                No scans performed yet. Enter a URL above to start!
-              </p>
-            ) : (
-              <div className="history-list" style={{ display: "flex", flexDirection: "column", gap: "12px", maxHeight: "250px", overflowY: "auto", paddingRight: "4px" }}>
-                {history.map((item) => (
-                  <div 
-                    key={item.id} 
-                    onClick={() => {
-                      setResult({
-                        url: item.url,
-                        overall: item.trustScore,
-                        risk: item.riskLevel,
-                        checks: item.reasons,
-                        notes: item.suggestions
-                      });
-                      setUrl(item.url);
-                    }}
-                    style={{ 
-                      display: "flex", 
-                      alignItems: "center", 
-                      justifyContent: "space-between", 
-                      padding: "10px 12px", 
-                      borderRadius: "10px", 
-                      border: "1px solid #e2e8f0", 
-                      cursor: "pointer",
-                      transition: "all 0.2s ease"
-                    }}
-                    className="history-item-row"
-                  >
-                    <div style={{ display: "flex", flexDirection: "column", gap: "4px", overflow: "hidden", marginRight: "10px" }}>
-                      <span style={{ fontSize: "14px", fontWeight: "600", color: "#374151", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
-                        {item.url}
-                      </span>
-                      <span style={{ fontSize: "11px", color: "#9ca3af" }}>
-                        {new Date(item.scannedAt).toLocaleDateString([], { month: "short", day: "numeric" })} at {new Date(item.scannedAt).toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' })}
-                      </span>
-                    </div>
-                    <span style={{ 
-                      fontSize: "12px", 
-                      fontWeight: "bold", 
-                      padding: "4px 8px", 
-                      borderRadius: "6px",
-                      color: "white",
-                      background: item.trustScore >= 80 ? "#10b981" : item.trustScore >= 50 ? "#f59e0b" : "#ef4444"
-                    }}>
-                      {item.trustScore}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
+    <section className="scanner-results" id="results">
+      {/* ── Idle state ── */}
+      {!isScanning && !result && !error && (
+        <div className="results-idle-container" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div className="results-idle">
+            <FaShieldAlt className="results-idle-icon" />
+            <h3>no_scan_queued</h3>
+            <p>Enter a URL in the scanner above or enter one here to run an ethical audit.</p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const val = e.target.elements.idleUrl?.value?.trim();
+                if (val) runAnalysis(val);
+              }}
+              className="results-idle-form"
+            >
+              <input
+                name="idleUrl"
+                type="text"
+                placeholder="https://example.com"
+                className="scanner-input idle-input"
+                autoComplete="off"
+                spellCheck={false}
+              />
+              <button type="submit" className="scanner-btn idle-btn">
+                Scan URL <FaArrowRight />
+              </button>
+            </form>
           </div>
+
+          {/* If user has scan history, show it right here on the dashboard */}
+          {user && renderHistoryPanel()}
         </div>
+      )}
 
-        <div className="dashboard-results">
-          {!result && !isAnalyzing && !error && (
-            <div className="results-empty">
-              <FaExclamationTriangle />
-              <p>Run a scan to see the trust and risk breakdown here.</p>
-            </div>
-          )}
+      {/* ── Scanning ── */}
+      {isScanning && <ScanOverlay />}
 
-          {isAnalyzing && (
-            <div className="results-loading">
-              <div className="spinner" />
-              <p>Auditing website security headers, SSL status, and threat indices...</p>
-            </div>
-          )}
+      {/* ── Error ── */}
+      {error && !isScanning && (
+        <div className="results-idle results-error">
+          <FaExclamationTriangle className="results-idle-icon" />
+          <h3>scan_failed</h3>
+          <p>{error}</p>
+          <button
+            type="button"
+            className="scanner-btn"
+            style={{ marginTop: 16 }}
+            onClick={() => {
+              const scannerEl = document.getElementById("scanner");
+              if (scannerEl) scannerEl.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Try Another URL
+          </button>
+        </div>
+      )}
 
-          {error && !isAnalyzing && (
-            <div className="results-empty" style={{ borderColor: "#ef4444" }}>
-              <FaExclamationTriangle style={{ color: "#ef4444" }} />
-              <p style={{ color: "#ef4444", fontWeight: "bold" }}>Scan Failed</p>
-              <p style={{ fontSize: "14px", color: "#4b5563", marginTop: "4px" }}>{error}</p>
-            </div>
-          )}
+      {/* ── Results ── */}
+      {result && !isScanning && (
+        <div className="results-wrap">
 
-          {result && !isAnalyzing && (
-            <>
-              <div className="overall-score">
-                <div className={`score-ring ${scoreBand(result.overall)}`}>
-                  <span>{result.overall}</span>
+          {/* Score gauge panel */}
+          <div className={`score-panel band-${bandOf(result.score)}`}>
+            <Gauge score={result.score} band={bandOf(result.score)} />
+            <div className="score-info">
+              <div className="score-url">{result.url}</div>
+              <div className="score-verdict" style={{ color: BAND_COLOR[bandOf(result.score)] }}>
+                {verdictOf(result.score)}
+              </div>
+              <div className="score-desc">{descOf(result.score)}</div>
+              <div className="score-meta">
+                <div className="score-meta-item">
+                  <span className="score-meta-label">risk_band</span>
+                  <span className="score-meta-value" style={{ color: BAND_COLOR[bandOf(result.score)] }}>
+                    {bandOf(result.score).toUpperCase()}
+                  </span>
                 </div>
-                <div>
-                  <h4 style={{ wordBreak: "break-all" }}>{result.url}</h4>
-                  <p className="category-tag">
-                    Risk Level: <span style={{ fontWeight: "bold" }} className={scoreBand(result.overall)}>{result.risk}</span>
-                  </p>
+                <div className="score-meta-item">
+                  <span className="score-meta-label">scanned_at</span>
+                  <span className="score-meta-value">
+                    {new Date(result.scannedAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                  </span>
+                </div>
+                <div className="score-meta-item">
+                  <span className="score-meta-label">issues_found</span>
+                  <span className="score-meta-value">{result.issues.length}</span>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="metric-list">
-                {result.checks.map((c, i) => (
-                  <div className="metric-row" key={i}>
-                    <div className="metric-label" style={{ width: "100%", gap: "10px" }}>
-                      {c.passed ? (
-                        <FaCheckCircle style={{ color: "#10b981", fontSize: "16px", flexShrink: 0 }} />
-                      ) : (
-                        <FaTimesCircle style={{ color: "#ef4444", fontSize: "16px", flexShrink: 0 }} />
-                      )}
-                      <span>{c.label}</span>
-                    </div>
-                  </div>
+          {/* Category breakdown */}
+          <div className="categories-panel">
+            <div className="panel-header">
+              <div className="panel-header-icon"><FaShieldAlt /></div>
+              <span className="panel-title">category_breakdown</span>
+            </div>
+            <div className="cat-grid">
+              {result.categories.map(c => (
+                <CategoryBar key={c.id} id={c.id} score={c.score} />
+              ))}
+            </div>
+          </div>
+
+          {/* Flagged issues */}
+          {result.issues.length > 0 && (
+            <div className="issues-panel">
+              <div className="panel-header">
+                <div className="panel-header-icon"><FaExclamationTriangle /></div>
+                <span className="panel-title">flagged_issues — {result.issues.length} found</span>
+              </div>
+              <div className="issues-list">
+                {result.issues.map((issue, i) => (
+                  <IssueCard key={i} issue={issue} />
                 ))}
               </div>
-
-              <div className="notes-box">
-                <h5>
-                  <FaBolt /> Recommended actions
-                </h5>
-                <ul>
-                  {result.notes.map((n, i) => (
-                    <li key={i}>{n}</li>
-                  ))}
-                </ul>
-              </div>
-            </>
+            </div>
           )}
+
+          {/* Tools & Technologies */}
+          <TechStackSection
+            techStack={result.techStack}
+            scanId={result.id}
+            url={result.url}
+          />
+
+          {/* Scan history */}
+          {renderHistoryPanel()}
+
         </div>
-      </div>
+      )}
     </section>
   );
 }

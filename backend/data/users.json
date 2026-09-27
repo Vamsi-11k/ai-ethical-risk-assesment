@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "6aa8c301ce7ae09755597d54",
+    "id": "6aa8c301ce7ae09755597d54",
+    "name": "Alice Tester",
+    "email": "alice@example.com",
+    "password": "$2a$10$jhu8YTRxYaLv3K245nOR9ORiI3a9OE56Z8Cs177vKr8ZjJgQblapS",
+    "createdAt": "2026-09-15T04:01:05.086Z",
+    "updatedAt": "2026-09-15T04:01:05.086Z"
+  },
+  {
+    "_id": "6aa8c368ce7ae09755597d56",
+    "id": "6aa8c368ce7ae09755597d56",
+    "name": "E2E User",
+    "email": "user_1789444968267@test.com",
+    "password": "$2a$10$7F.4/Bbfg1Vl2Gw4qpFgbO.fmYKGIptByPSihelpNjwL6O5qSQs8y",
+    "createdAt": "2026-09-15T04:02:48.391Z",
+    "updatedAt": "2026-09-15T04:02:48.391Z"
+  },
+  {
+    "_id": "6aa8c3a7ce7ae09755597d59",
+    "id": "6aa8c3a7ce7ae09755597d59",
+    "name": "GOTTAM ABHISHEK",
+    "email": "gottam.abhishek2006@gmail.com",
+    "password": "$2a$10$OihqVo.jj2UT6gKF7XPLKe4vouOzrBBXk2a6FtKlHPNFlcysuhfF6",
+    "createdAt": "2026-09-15T04:03:51.656Z",
+    "updatedAt": "2026-09-15T04:03:51.656Z"
+  }
+]

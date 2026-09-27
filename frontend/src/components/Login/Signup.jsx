@@ -1,292 +1,144 @@
 import { useState } from "react";
 import "./AuthPage.css";
 import {
-  FaArrowLeft,
-  FaEnvelope,
-  FaLock,
-  FaUser,
-  FaEye,
-  FaEyeSlash,
-  FaGoogle,
-  FaGithub,
-  FaShieldAlt,
-  FaChartLine,
-  FaBalanceScale,
-  FaUserShield,
-  FaUserPlus,
+  FaArrowLeft, FaEnvelope, FaLock, FaUser,
+  FaEye, FaEyeSlash, FaGoogle, FaGithub,
+  FaShieldAlt, FaChartLine, FaBalanceScale, FaUserShield,
 } from "react-icons/fa";
 
 function Signup({ onGoHome, onGoToLogin, onSignupSuccess }) {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [agreed, setAgreed] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPw,  setShowPw]  = useState(false);
+  const [showCfm, setShowCfm] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", password: "", confirmPassword: "" });
+  const [agreed, setAgreed]   = useState(false);
+  const [error,  setError]    = useState("");
+  const [success,setSuccess]  = useState(false);
+  const [busy,   setBusy]     = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const change = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const submit = async e => {
     e.preventDefault();
-
-    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
-      setError("Please fill in all fields.");
-      return;
-    }
-
-    if (form.password.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-
-    if (form.password !== form.confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
-    if (!agreed) {
-      setError("Please agree to the Terms of Service and Privacy Policy.");
-      return;
-    }
-
-    setError("");
-    setIsSubmitting(true);
-    setSuccess(false);
-
+    if (!form.name || !form.email || !form.password || !form.confirmPassword) { setError("all fields required."); return; }
+    if (form.password.length < 6) { setError("password must be ≥ 6 characters."); return; }
+    if (form.password !== form.confirmPassword) { setError("passwords do not match."); return; }
+    if (!agreed) { setError("you must accept the terms."); return; }
+    setError(""); setBusy(true);
     try {
-      const response = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          password: form.password,
-        }),
+      const res  = await fetch("/api/auth/signup", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.name, email: form.email, password: form.password }),
       });
-
-      const resJson = await response.json();
-
-      if (!response.ok) {
-        throw new Error(resJson.message || "Failed to create account. User might already exist.");
-      }
-
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.message || "signup failed.");
       setSuccess(true);
-      
-      setTimeout(() => {
-        if (onSignupSuccess) {
-          onSignupSuccess(resJson.user);
-        }
-      }, 1500);
+      setTimeout(() => onSignupSuccess?.(json.user), 1500);
     } catch (err) {
-      setError(err.message || "An unexpected error occurred during signup.");
+      setError(err.message || "unexpected error.");
     } finally {
-      setIsSubmitting(false);
+      setBusy(false);
     }
   };
 
   return (
     <div className="auth-page">
-      {/* Left branding panel */}
       <div className="auth-brand">
         <div className="auth-brand-top">
-          <div className="auth-brand-logo">
-            <FaShieldAlt />
-          </div>
-          <div>
-            <h1>EthicalAI</h1>
-            <span>Risk Assessment Framework</span>
-          </div>
+          <div className="auth-brand-logo"><FaShieldAlt /></div>
+          <div><h1>EthicalAI</h1><span>risk_scanner_v2</span></div>
         </div>
-
         <div className="auth-brand-mid">
-          <h2>Start assessing AI risk today.</h2>
-          <p>
-            Create your free account and get instant access to fairness,
-            privacy, and safety assessments for your AI systems.
-          </p>
-
+          <h2>Start auditing AI risk today.</h2>
+          <p>Free account gives you full access to the ethical scanner and saved history.</p>
           <div className="auth-brand-features">
-            <div className="auth-brand-feature">
-              <div className="auth-brand-feature-icon">
-                <FaBalanceScale />
+            {[
+              { icon: <FaBalanceScale />, title: "bias_fairness_analysis",  desc: "Detect demographic bias signals in AI-facing content." },
+              { icon: <FaUserShield />,   title: "privacy_assessment",       desc: "Evaluate personal data handling and consent practices." },
+              { icon: <FaChartLine />,    title: "live_dashboard",           desc: "Track risk scores and scan history across sessions." },
+            ].map((f, i) => (
+              <div className="auth-brand-feature" key={i}>
+                <div className="auth-brand-feature-icon">{f.icon}</div>
+                <div className="auth-brand-feature-text">
+                  <h4>{f.title}</h4>
+                  <p>{f.desc}</p>
+                </div>
               </div>
-              <div className="auth-brand-feature-text">
-                <h4>Fairness Analysis</h4>
-                <p>Detect gender, age, and demographic bias in AI models.</p>
-              </div>
-            </div>
-            <div className="auth-brand-feature">
-              <div className="auth-brand-feature-icon">
-                <FaUserShield />
-              </div>
-              <div className="auth-brand-feature-text">
-                <h4>Privacy Assessment</h4>
-                <p>Evaluate sensitive data handling and privacy compliance.</p>
-              </div>
-            </div>
-            <div className="auth-brand-feature">
-              <div className="auth-brand-feature-icon">
-                <FaChartLine />
-              </div>
-              <div className="auth-brand-feature-text">
-                <h4>Live Dashboard</h4>
-                <p>Track risk scores and trends across every project.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-
-        <div className="auth-brand-bottom">
-          © {new Date().getFullYear()} EthicalAI. All rights reserved.
-        </div>
+        <div className="auth-brand-bottom">© {new Date().getFullYear()} EthicalAI. All rights reserved.</div>
       </div>
 
-      {/* Right form panel */}
       <div className="auth-form-panel">
-        <button className="auth-back-home" onClick={onGoHome}>
-          <FaArrowLeft /> Back to home
-        </button>
-
+        <button className="auth-back-home" onClick={onGoHome}><FaArrowLeft /> back_to_home</button>
         <div className="auth-card">
           <div className="auth-card-header">
-            <h2>Create Your Account</h2>
+            <h2>Create account</h2>
             <p>Get started with your free risk assessment dashboard.</p>
           </div>
 
-          {error && <div className="auth-error">{error}</div>}
-          {success && (
-            <div className="auth-success">
-              Account created successfully! You can now sign in.
-            </div>
-          )}
+          {error   && <div className="auth-error">error: {error}</div>}
+          {success && <div className="auth-success">account_created — redirecting…</div>}
 
-          <form className="auth-form" onSubmit={handleSubmit}>
+          <form className="auth-form" onSubmit={submit}>
             <div className="input-group">
-              <label htmlFor="signup-name">Full Name</label>
+              <label htmlFor="s-name">full_name</label>
               <div className="input-wrap">
                 <FaUser className="input-icon" />
-                <input
-                  id="signup-name"
-                  name="name"
-                  type="text"
-                  placeholder="Jane Doe"
-                  value={form.name}
-                  onChange={handleChange}
-                />
+                <input id="s-name" name="name" type="text" placeholder="Jane Doe"
+                  value={form.name} onChange={change} />
               </div>
             </div>
-
             <div className="input-group">
-              <label htmlFor="signup-email">Email</label>
+              <label htmlFor="s-email">email_address</label>
               <div className="input-wrap">
                 <FaEnvelope className="input-icon" />
-                <input
-                  id="signup-email"
-                  name="email"
-                  type="email"
-                  placeholder="you@company.com"
-                  value={form.email}
-                  onChange={handleChange}
-                />
+                <input id="s-email" name="email" type="email" placeholder="you@company.com"
+                  value={form.email} onChange={change} />
               </div>
             </div>
-
             <div className="auth-row">
               <div className="input-group">
-                <label htmlFor="signup-password">Password</label>
+                <label htmlFor="s-pw">password</label>
                 <div className="input-wrap">
                   <FaLock className="input-icon" />
-                  <input
-                    id="signup-password"
-                    name="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Create a password"
-                    value={form.password}
-                    onChange={handleChange}
-                  />
-                  <button
-                    type="button"
-                    className="toggle-password"
-                    onClick={() => setShowPassword(!showPassword)}
-                    aria-label={
-                      showPassword ? "Hide password" : "Show password"
-                    }
-                  >
-                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  <input id="s-pw" name="password" type={showPw ? "text" : "password"}
+                    placeholder="min 6 chars" value={form.password} onChange={change} />
+                  <button type="button" className="toggle-password" onClick={() => setShowPw(v => !v)}>
+                    {showPw ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
               </div>
-
               <div className="input-group">
-                <label htmlFor="signup-confirm">Confirm Password</label>
+                <label htmlFor="s-cfm">confirm</label>
                 <div className="input-wrap">
                   <FaLock className="input-icon" />
-                  <input
-                    id="signup-confirm"
-                    name="confirmPassword"
-                    type={showConfirm ? "text" : "password"}
-                    placeholder="Re-enter password"
-                    value={form.confirmPassword}
-                    onChange={handleChange}
-                  />
-                  <button
-                    type="button"
-                    className="toggle-password"
-                    onClick={() => setShowConfirm(!showConfirm)}
-                    aria-label={showConfirm ? "Hide password" : "Show password"}
-                  >
-                    {showConfirm ? <FaEyeSlash /> : <FaEye />}
+                  <input id="s-cfm" name="confirmPassword" type={showCfm ? "text" : "password"}
+                    placeholder="repeat" value={form.confirmPassword} onChange={change} />
+                  <button type="button" className="toggle-password" onClick={() => setShowCfm(v => !v)}>
+                    {showCfm ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
               </div>
             </div>
-            <p className="password-hint">Use at least 8 characters.</p>
-
             <label className="terms-check">
-              <input
-                type="checkbox"
-                checked={agreed}
-                onChange={(e) => setAgreed(e.target.checked)}
-              />
-              <span>
-                I agree to the <a href="#">Terms of Service</a> and{" "}
-                <a href="#">Privacy Policy</a>.
-              </span>
+              <input type="checkbox" checked={agreed} onChange={e => setAgreed(e.target.checked)} />
+              I agree to the <a href="#" onClick={e => e.preventDefault()}>terms_of_service</a>
+              {" "}and <a href="#" onClick={e => e.preventDefault()}>privacy_policy</a>
             </label>
-
-            <button type="submit" className="auth-submit" disabled={isSubmitting}>
-              <FaUserPlus /> {isSubmitting ? "Creating Account..." : "Create Account"}
+            <button type="submit" className="auth-submit" disabled={busy}>
+              {busy ? "creating_account…" : "create_account →"}
             </button>
           </form>
 
-          <div className="auth-divider">
-            <span>or continue with</span>
-          </div>
-
+          <div className="auth-divider"><span>or</span></div>
           <div className="social-login">
-            <button type="button" className="social-btn">
-              <FaGoogle /> Google
-            </button>
-            <button type="button" className="social-btn">
-              <FaGithub /> GitHub
-            </button>
+            <button type="button" className="social-btn"><FaGoogle /> google</button>
+            <button type="button" className="social-btn"><FaGithub /> github</button>
           </div>
-
           <p className="auth-footer">
-            Already have an account?{" "}
-            <button type="button" className="link-btn" onClick={onGoToLogin}>
-              Sign in
-            </button>
+            have an account?{" "}
+            <button type="button" className="link-btn" onClick={onGoToLogin}>sign_in →</button>
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import request from 'supertest';
 import mongoose from 'mongoose';
 import { jest } from '@jest/globals';
@@ -12,7 +13,18 @@ describe('Analyze & Scans Endpoints', () => {
 
   beforeAll(async () => {
     if (mongoose.connection.readyState === 0) {
-      await mongoose.connect('mongodb://127.0.0.1:27017/ethicalai_test');
+      const baseUri = process.env.MONGODB_URI || process.env.MONGO_URI;
+      let testUri = 'mongodb://127.0.0.1:27017/ethicalai_test';
+      if (baseUri) {
+        try {
+          const parsed = new URL(baseUri);
+          parsed.pathname = '/ethicalai_test';
+          testUri = parsed.toString();
+        } catch {
+          testUri = baseUri;
+        }
+      }
+      await mongoose.connect(testUri, { serverSelectionTimeoutMS: 10000 });
     }
 
     // Pre-create user for auth token
@@ -23,7 +35,7 @@ describe('Analyze & Scans Endpoints', () => {
     });
 
     token = generateToken(user._id);
-  });
+  }, 15000);
 
   afterEach(async () => {
     await Scan.deleteMany({});

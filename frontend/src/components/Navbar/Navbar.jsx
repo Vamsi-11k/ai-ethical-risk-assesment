@@ -1,67 +1,75 @@
+import { useState } from "react";
 import "./Navbar.css";
 import { FaShieldAlt } from "react-icons/fa";
 
+const NAV = [
+  { label: "scanner",    href: "#scanner" },
+  { label: "features",   href: "#features" },
+  { label: "how_it_works", href: "#workflow" },
+  { label: "about",      href: "#about" },
+  { label: "contact",    href: "#contact" },
+];
+
 function Navbar({ onLoginClick, onSignupClick, user, onLogout }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="navbar">
-      {/* Logo */}
-      <div className="logo">
-        <FaShieldAlt className="logo-icon" />
-
-        <div className="logo-text">
-          <h2>EthicalAI</h2>
-          <span>Risk Assessment Framework</span>
+    <>
+      <header className="navbar">
+        <div className="logo">
+          <div className="logo-icon-wrap"><FaShieldAlt /></div>
+          <div className="logo-text">
+            <h2>EthicalAI</h2>
+            <span>risk_scanner_v2</span>
+          </div>
         </div>
-      </div>
 
-      {/* Navigation Menu */}
-      <nav>
-        <ul className="nav-links">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a href="#workflow">How It Works</a>
-          </li>
-          <li>
-            <a href="#dashboard">Dashboard</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
+        <nav>
+          <ul className="nav-links">
+            {NAV.map(l => (
+              <li key={l.href}>
+                <a href={l.href} onClick={() => setMobileOpen(false)}>{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="nav-buttons">
+          {user ? (
+            <>
+              <span className="nav-user-greeting">{user.name}</span>
+              <button className="nav-login-btn" onClick={onLogout}>logout</button>
+            </>
+          ) : (
+            <>
+              <button className="nav-login-btn"    onClick={onLoginClick}>login</button>
+              <button className="nav-register-btn" onClick={onSignupClick}>get_access</button>
+            </>
+          )}
+        </div>
+
+        <button className="nav-hamburger" onClick={() => setMobileOpen(o => !o)}
+          aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
+      </header>
+
+      <nav className={`nav-mobile ${mobileOpen ? "open" : ""}`}>
+        {NAV.map(l => (
+          <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)}>{l.label}</a>
+        ))}
+        <div className="mobile-btns">
+          {user ? (
+            <button className="nav-login-btn" onClick={() => { onLogout(); setMobileOpen(false); }}>logout</button>
+          ) : (
+            <>
+              <button className="nav-login-btn"    onClick={() => { onLoginClick();  setMobileOpen(false); }}>login</button>
+              <button className="nav-register-btn" onClick={() => { onSignupClick(); setMobileOpen(false); }}>get_access</button>
+            </>
+          )}
+        </div>
       </nav>
-
-      {/* Action Buttons */}
-      <div className="nav-buttons">
-        {user ? (
-          <>
-            <span className="user-greeting" style={{ marginRight: "16px", color: "#e2e8f0", fontSize: "14px", fontWeight: "500" }}>
-              Hello, {user.name}
-            </span>
-            <button className="login-btn" onClick={onLogout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <button className="login-btn" onClick={onLoginClick}>
-              Login
-            </button>
-
-            <button className="register-btn" onClick={onSignupClick}>
-              Get Started
-            </button>
-          </>
-        )}
-      </div>
-    </header>
+    </>
   );
 }
 
