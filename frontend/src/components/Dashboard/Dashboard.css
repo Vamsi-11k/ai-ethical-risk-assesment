@@ -917,8 +917,8 @@
 }
 
 .view-evidence-btn:hover {
-  border-color: #3b82f6;
-  color: #60a5fa;
+  border-color: #10b981;
+  color: #34d399;
 }
 
 .tech-evidence-drawer {
@@ -1069,7 +1069,7 @@
 
 .fingerprint-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  background: linear-gradient(90deg, #10b981, #34d399);
   border-radius: var(--r-full);
   transition: width 0.8s var(--ease);
 }

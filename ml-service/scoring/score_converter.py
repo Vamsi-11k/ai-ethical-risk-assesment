@@ -63,16 +63,25 @@ def convert_score(prob_legitimate: float, features_dict: dict = None, url: str =
         parsed_url = urllib.parse.urlparse(url)
         domain = parsed_url.netloc.lower().split(":")[0]
         
-        suspicious_tlds = {".xyz", ".top", ".click", ".work", ".link", ".info", ".biz", ".cc", ".icu", ".online", ".site"}
+        suspicious_tlds = {".xyz", ".top", ".click", ".work", ".link", ".info", ".biz", ".cc", ".icu", ".online", ".site", ".forex", ".buzz", ".fit", ".gq", ".cf", ".ml", ".tk"}
         urgency_keywords = {"secure", "login", "verify", "update", "bank", "signin", "pay", "free", "invoice", "wallet", "support"}
+        piracy_keywords = {
+            "movierulz", "netmirror", "torrent", "123movies", "fmovies", "putlocker",
+            "pirate", "warez", "yts", "rarbg", "freemovie", "watchfree", "solarmovie",
+            "primewire", "gostream", "soap2day", "hdmovie", "tamildbox", "ibomma",
+            "filmywap", "bolly4u", "khatrimaza", "todaypk", "moviesda", "cinebloom"
+        }
         
         has_suspicious_tld = any(domain.endswith(tld) for tld in suspicious_tlds)
         has_urgency_keyword = any(word in domain for word in urgency_keywords)
+        has_piracy_term = any(term in domain for term in piracy_keywords)
         
-        if has_suspicious_tld and has_urgency_keyword:
+        if has_piracy_term:
+            score -= 40 # Severe penalty for illicit streaming / piracy mirror
+        elif has_suspicious_tld and has_urgency_keyword:
             score -= 20 # Suspicious TLD combined with urgency/financial term
         elif has_suspicious_tld:
-            score -= 10
+            score -= 15
         elif has_urgency_keyword:
             score -= 5
             
@@ -101,6 +110,10 @@ def convert_score(prob_legitimate: float, features_dict: dict = None, url: str =
         heuristic_score = max(0.0, min(100.0, score))
         
         # --- HARD CAPPING RULES ---
+        # Rule 0: Piracy / illicit streaming / unauthorized mirror domains must be <= 18
+        if has_piracy_term:
+            heuristic_score = min(heuristic_score, 18.0)
+
         # Resolve status from confidence_dict or fallback to features_dict mapping
         if confidence_dict:
             ssl_status = confidence_dict.get("ssl_state", "UNAVAILABLE")

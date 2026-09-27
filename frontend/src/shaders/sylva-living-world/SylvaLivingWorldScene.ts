@@ -1,0 +1,1 @@
+export const MAPLE_AUTUMN_STYLE = ""; export const SAKURA_SUNSET_STYLE = ""; export const SEQUOIA_MIST_STYLE = ""; export const applyMapleAutumnVariant = (s) => s; export const applySakuraSunsetVariant = (s) => s; export const applySequoiaMistVariant = (s) => s;

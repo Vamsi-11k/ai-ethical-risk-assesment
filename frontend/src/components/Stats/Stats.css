@@ -1,60 +1,81 @@
 /* ============================================================
-   STATS — Dark terminal metric strip
+   STATS — High-Precision Metric Strip
    ============================================================ */
 
 .stats {
   width: 100%;
   padding: 0 var(--gutter);
-  background: var(--bg-surface);
+  background: rgba(14, 25, 18, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bg-border);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 2;
 }
 
 .stat-card {
-  padding: 28px 24px;
+  padding: 30px 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   border-right: 1px solid var(--bg-border);
-  transition: background var(--t);
+  transition: all var(--t);
 }
 
-.stat-card:last-child { border-right: none; }
-.stat-card:hover { background: var(--bg-hover); }
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-card:hover {
+  background: rgba(22, 38, 28, 0.5);
+}
 
 .stat-icon-wrap {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--r-md);
-  background: var(--brand-dim);
-  border: 1px solid var(--brand-border);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: #60a5fa;
+  font-size: 16px;
+  color: #34d399;
   flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+  transition: all var(--t);
 }
 
-.stat-text { min-width: 0; }
+.stat-card:hover .stat-icon-wrap {
+  transform: scale(1.08);
+  border-color: #34d399;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.22);
+}
+
+.stat-text {
+  min-width: 0;
+}
 
 .stat-value {
   font-family: var(--font-mono);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -.5px;
-  line-height: 1;
+  font-size: 22px;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
 }
 
 .stat-label {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-muted);
-  letter-spacing: .8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 @media (max-width: 900px) {

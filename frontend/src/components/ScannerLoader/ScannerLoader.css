@@ -1,0 +1,257 @@
+/* ============================================================
+   SCANNER LOADER — High-Tech Cyber Radar Audit Animation
+   ============================================================ */
+
+.scanner-loader-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 20px;
+  width: 100%;
+}
+
+.scanner-loader-card {
+  width: 100%;
+  max-width: 680px;
+  background: rgba(14, 25, 18, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-2xl);
+  padding: 36px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 36px var(--glow-brand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  animation: loader-fadeIn 0.35s ease-out;
+}
+
+@keyframes loader-fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- Cyber Radar Visualizer ---------- */
+.loader-radar-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 25, 18, 0.4) 0%, rgba(8, 14, 10, 0.9) 100%);
+  border: 1px solid var(--brand-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 24px var(--glow-brand);
+}
+
+.radar-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed var(--brand-border);
+  opacity: 0.4;
+}
+
+.radar-c1 { width: 44px; height: 44px; }
+.radar-c2 { width: 84px; height: 84px; }
+.radar-c3 { width: 124px; height: 124px; }
+
+.radar-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, var(--brand-dim) 60deg, var(--brand) 90deg, transparent 90.1deg);
+  animation: radar-spin 2s linear infinite;
+}
+
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.radar-core {
+  position: relative;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(14, 25, 18, 0.95);
+  border: 1px solid var(--brand-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px var(--glow-brand);
+}
+
+.radar-shield-icon {
+  font-size: 16px;
+  color: var(--brand);
+  animation: shield-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes shield-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.3); }
+}
+
+/* Radar Blips */
+.radar-blip {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 8px var(--brand);
+  animation: blip-flash 1.5s infinite;
+}
+
+.blip-1 { top: 28px; left: 36px; animation-delay: 0.3s; }
+.blip-2 { bottom: 32px; right: 28px; animation-delay: 0.8s; }
+.blip-3 { top: 76px; right: 24px; animation-delay: 1.2s; }
+
+@keyframes blip-flash {
+  0%, 100% { opacity: 0.2; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* ---------- Status Info ---------- */
+.loader-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.loader-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-code);
+  letter-spacing: 1.2px;
+  background: var(--brand-dim);
+  border: 1px solid var(--brand-border);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+
+.loader-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 6px var(--brand);
+  animation: pulse-beacon 1.2s infinite;
+}
+
+.loader-target {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.highlight-url {
+  color: var(--text-code);
+  font-family: var(--font-mono);
+}
+
+.loader-desc {
+  font-size: 13px;
+  color: #94a3b8;
+  max-width: 480px;
+  min-height: 20px;
+}
+
+/* ---------- Progress Bar ---------- */
+.loader-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(14, 25, 18, 0.9);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.loader-progress-bar {
+  height: 100%;
+  background: var(--brand-gradient);
+  border-radius: var(--r-full);
+  box-shadow: 0 0 12px var(--brand);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Stages List ---------- */
+.loader-stages-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  width: 100%;
+  padding-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .loader-stages-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loader-stage-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  background: rgba(10, 19, 13, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: left;
+  transition: all var(--t);
+}
+
+.loader-stage-item.completed {
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.loader-stage-item.active {
+  border-color: var(--brand);
+  background: var(--brand-dim);
+  color: #f8fafc;
+  box-shadow: 0 0 10px var(--glow-brand);
+}
+
+.loader-stage-item.pending {
+  color: #475569;
+}
+
+.stage-status-icon {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+
+.check-done {
+  color: #10b981;
+}
+
+.spin-active {
+  color: var(--brand);
+  animation: spin 0.8s linear infinite;
+}
+
+.dot-pending {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #334155;
+}

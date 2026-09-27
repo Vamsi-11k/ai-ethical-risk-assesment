@@ -22,7 +22,7 @@ const scanSchema = new mongoose.Schema(
     },
     riskLevel: {
       type: String,
-      enum: ['Low', 'Medium', 'High'],
+      enum: ['Low', 'Medium', 'High', 'Low Risk', 'Moderate Risk', 'High Risk', 'Critical Risk', 'Critical'],
       required: true,
     },
     reasons: [
