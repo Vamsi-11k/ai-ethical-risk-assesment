@@ -3,6 +3,8 @@ import { scoreUrl } from '../services/mlClient.js';
 import AppError from '../utils/AppError.js';
 import asyncHandler from '../utils/asyncHandler.js';
 import * as storageService from '../services/storageService.js';
+import { analyzeHallucinations } from '../services/hallucinationService.js';
+import { detectTechStack } from '../services/techDetectorService.js';
 
 export const analyzeSystem = asyncHandler(async (req, res, next) => {
   const errors = validationResult(req);
@@ -87,9 +89,16 @@ export const getMyScans = asyncHandler(async (req, res, next) => {
 
 export const getScanTechStack = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
+  let targetUrl = req.query.url || '';
+
   if (id) {
     const scan = await storageService.getScanById(id);
-    if (scan && scan.techStack && Object.keys(scan.techStack).length > 0) {
+    if (
+      scan &&
+      scan.techStack &&
+      scan.techStack.categories &&
+      Object.keys(scan.techStack.categories).length > 0
+    ) {
       return res.status(200).json({
         status: 'success',
         data: {
@@ -98,17 +107,23 @@ export const getScanTechStack = asyncHandler(async (req, res, next) => {
         }
       });
     }
+    if (scan && scan.url && !targetUrl) {
+      targetUrl = scan.url;
+    }
   }
 
-  // If not found in DB or DB offline, query parameter fallback
-  const urlParam = req.query.url;
-  if (urlParam) {
-    const mlResponse = await scoreUrl(urlParam);
+  if (targetUrl) {
+    const mlResponse = await scoreUrl(targetUrl);
+    const detected =
+      mlResponse.tech_stack && mlResponse.tech_stack.categories
+        ? mlResponse.tech_stack
+        : await detectTechStack(targetUrl);
+
     return res.status(200).json({
       status: 'success',
       data: {
-        techStack: mlResponse.tech_stack || {},
-        tech_stack: mlResponse.tech_stack || {}
+        techStack: detected,
+        tech_stack: detected
       }
     });
   }
@@ -119,5 +134,21 @@ export const getScanTechStack = asyncHandler(async (req, res, next) => {
       techStack: {},
       tech_stack: {}
     }
+  });
+});
+
+export const checkHallucination = asyncHandler(async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const errorMsgs = errors.array().map((err) => err.msg).join(', ');
+    return next(new AppError(errorMsgs, 400));
+  }
+
+  const { text, context = '', sourceUrl = '' } = req.body;
+  const result = await analyzeHallucinations({ text, context, sourceUrl });
+
+  res.status(200).json({
+    status: 'success',
+    data: result
   });
 });

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import "./ScannerLoader.css";
-import { FaShieldAlt, FaTerminal, FaSearch, FaCheckCircle, FaSpinner } from "react-icons/fa";
+import { FaShieldAlt, FaCheckCircle, FaSpinner } from "react-icons/fa";
 
 const AUDIT_STAGES = [
   { label: "INITIALIZING_AUDIT", desc: "Resolving DNS & probing TLS cipher suites..." },
-  { label: "DATA_SOVEREIGNTY", desc: "Auditing third-party telemetry, tracking pixels & GDPR cookies..." },
+  { label: "DATA_SOVEREIGNTY", desc: "Auditing third-party telemetry, tracking pixels & cookies..." },
   { label: "ALGORITHMIC_BIAS", desc: "Analyzing demographic parity & linguistic disparate impact..." },
   { label: "UX_MANIPULATION", desc: "Scanning for forced consent, dark patterns & deceptive flows..." },
   { label: "MODEL_TRANSPARENCY", desc: "Benchmarking against NIST AI RMF 1.0 & EU AI Act standards..." },
@@ -21,72 +20,70 @@ function ScannerLoader({ targetUrl = "target endpoint" }) {
     return () => clearInterval(timer);
   }, []);
 
+  const progress = ((currentStage + 1) / AUDIT_STAGES.length) * 100;
+
   return (
-    <div className="scanner-loader-overlay">
-      <div className="scanner-loader-card">
-        {/* Radar Scanner Visualizer */}
-        <div className="loader-radar-wrapper">
-          <div className="radar-circle radar-c1" />
-          <div className="radar-circle radar-c2" />
-          <div className="radar-circle radar-c3" />
-          <div className="radar-sweep" />
-          <div className="radar-core">
-            <FaShieldAlt className="radar-shield-icon" />
+    <div className="flex justify-center py-6">
+      <div className="w-full max-w-2xl rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.12)] sm:p-8">
+        <div className="mx-auto relative flex h-28 w-28 items-center justify-center">
+          <div className="absolute inset-0 rounded-full border border-neutral-200" />
+          <div className="absolute inset-3 rounded-full border border-neutral-300" />
+          <div className="animate-radar-spin absolute inset-0 rounded-full border-t-2 border-black" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-xl text-white shadow-md">
+            <FaShieldAlt />
           </div>
-          <div className="radar-blip blip-1" />
-          <div className="radar-blip blip-2" />
-          <div className="radar-blip blip-3" />
         </div>
 
-        {/* Audit Status Info */}
-        <div className="loader-meta">
-          <div className="loader-tag">
-            <span className="loader-pulse-dot" />
-            <span>AUTONOMOUS FORENSIC INSPECTION</span>
+        <div className="mt-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-widest text-neutral-800">
+            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-black" />
+            <span>Autonomous Forensic Inspection</span>
           </div>
 
-          <h3 className="loader-target">
-            Auditing: <span className="highlight-url">{targetUrl}</span>
+          <h3 className="mt-3 truncate text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
+            Auditing: <span className="font-mono font-semibold text-neutral-800">{targetUrl}</span>
           </h3>
 
-          <p className="loader-desc">
+          <p className="mt-1.5 text-sm font-medium text-neutral-800">
             {AUDIT_STAGES[currentStage].desc}
           </p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="loader-progress-track">
+        <div className="mt-6 h-1.5 w-full overflow-hidden rounded-full bg-neutral-200">
           <div
-            className="loader-progress-bar"
-            style={{ width: `${((currentStage + 1) / AUDIT_STAGES.length) * 100}%` }}
+            className="h-full rounded-full bg-black transition-all duration-500 ease-out"
+            style={{ width: `${progress}%` }}
           />
         </div>
 
-        {/* Steps Telemetry Log */}
-        <div className="loader-stages-list">
-          {AUDIT_STAGES.map((stage, idx) => (
-            <div
-              key={stage.label}
-              className={`loader-stage-item ${
-                idx < currentStage
-                  ? "completed"
-                  : idx === currentStage
-                  ? "active"
-                  : "pending"
-              }`}
-            >
-              <div className="stage-status-icon">
-                {idx < currentStage ? (
-                  <FaCheckCircle className="check-done" />
-                ) : idx === currentStage ? (
-                  <FaSpinner className="spin-active" />
-                ) : (
-                  <span className="dot-pending" />
-                )}
+        <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {AUDIT_STAGES.map((stage, idx) => {
+            const done = idx < currentStage;
+            const active = idx === currentStage;
+            return (
+              <div
+                key={stage.label}
+                className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 font-mono text-[11px] transition-all duration-200 ${
+                  done
+                    ? "border-neutral-200 bg-neutral-50 text-neutral-700"
+                    : active
+                    ? "border-black bg-black text-white"
+                    : "border-neutral-100 bg-white text-neutral-400"
+                }`}
+              >
+                <span className="shrink-0">
+                  {done ? (
+                    <FaCheckCircle className="text-neutral-900" />
+                  ) : active ? (
+                    <FaSpinner className="animate-spin text-white" />
+                  ) : (
+                    <span className="block h-2 w-2 rounded-full bg-neutral-300" />
+                  )}
+                </span>
+                <span className="truncate font-medium">{stage.label}</span>
               </div>
-              <span className="stage-label">{stage.label}</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

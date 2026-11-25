@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-
+import { AnimatePresence, motion } from "motion/react";
 import Navbar from "./components/Navbar/Navbar";
 import LandingPage from "./pages/LandingPage";
 import MainApp from "./pages/MainApp";
@@ -10,16 +9,12 @@ import WhyUsPage from "./pages/WhyUsPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ManifestoPage from "./pages/ManifestoPage";
 import ContactPage from "./pages/ContactPage";
-
 import Login from "./components/Login/Login";
 import Signup from "./components/Login/Signup";
 import Scene from "./components/Hero/Scene";
 
 function App() {
-  // Navigation views: "landing" | "app" | "features" | "workflow" | "why-us" | "categories" | "manifesto" | "contact" | "login" | "signup"
   const [view, setView] = useState("landing");
-
-  // Dynamic Risk Reactive Theme: "safe" (Green) | "moderate" (Yellow) | "risky" (Red)
   const [riskTheme, setRiskTheme] = useState("safe");
 
   const [user, setUser] = useState(() => {
@@ -32,17 +27,14 @@ function App() {
   const [isScanning, setIsScanning] = useState(false);
   const [signupEmail, setSignupEmail] = useState("");
 
-  // Update root html attribute for dynamic CSS risk variables
   useEffect(() => {
     document.documentElement.setAttribute("data-risk-theme", riskTheme);
   }, [riskTheme]);
 
-  // Scroll to top on view change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [view]);
 
-  // Listen for launch app message events from Sylva iframe
   useEffect(() => {
     const handleMsg = (event) => {
       if (event.data?.type === "LAUNCH_APP") {
@@ -59,7 +51,6 @@ function App() {
     setIsScanning(true);
     setView("app");
 
-    // Smooth scroll down to results after dashboard loads
     setTimeout(() => {
       const resultsEl = document.getElementById("results");
       if (resultsEl) {
@@ -90,119 +81,123 @@ function App() {
     setView("login");
   };
 
-  // Login view
-  if (view === "login") {
-    return (
-      <Login
-        onGoHome={() => setView("landing")}
-        onGoToSignup={() => setView("signup")}
-        onLoginSuccess={handleLoginSuccess}
-        initialEmail={signupEmail}
-      />
-    );
-  }
+  const pageTransition = {
+    initial: { opacity: 0, y: 14 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+    transition: { duration: 0.26, ease: [0.16, 1, 0.3, 1] },
+  };
 
-  // Signup view
-  if (view === "signup") {
+  if (view === "login" || view === "signup") {
     return (
-      <Signup
-        onGoHome={() => setView("landing")}
-        onGoToLogin={() => setView("login")}
-        onSignupSuccess={handleSignupSuccess}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div key={view} {...pageTransition}>
+          {view === "login" ? (
+            <Login
+              onGoHome={() => setView("landing")}
+              onGoToSignup={() => setView("signup")}
+              onLoginSuccess={handleLoginSuccess}
+              initialEmail={signupEmail}
+            />
+          ) : (
+            <Signup
+              onGoHome={() => setView("landing")}
+              onGoToLogin={() => setView("login")}
+              onSignupSuccess={handleSignupSuccess}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
     );
   }
 
   return (
-    <div className="app-shell" data-risk-theme={riskTheme}>
-      {/* ── Persistent Living Green 3D Background across every page ── */}
-      <div className="persistent-living-green-bg" aria-hidden="true">
-        <Scene background={true} />
-      </div>
+    <div
+      className="relative min-h-screen w-full bg-white text-neutral-950 bg-arch-grid"
+      data-risk-theme={riskTheme}
+    >
+      <Scene />
 
-      {/* Universal Animated Navbar with Dynamic Risk Laser Sweeper & Icons */}
-      <Navbar
-        currentView={view}
-        riskTheme={riskTheme}
-        onNavigate={(newView) => setView(newView)}
-        onLoginClick={() => setView("login")}
-        onSignupClick={() => setView("signup")}
-        user={user}
-        onLogout={handleLogout}
-      />
-
-      {/* ── Separate Dedicated Pages ──────────────────────────────── */}
-
-      {/* 1. Landing Hero Page (Centerpiece & Ethical AI Overview) */}
-      {view === "landing" && (
-        <LandingPage
-          onLaunchApp={() => setView("app")}
-          onQuickScan={(url) => handleScan(url)}
-        />
-      )}
-
-      {/* 2. Audit Studio (Dedicated AI Ethical Risk Scanner & Results) */}
-      {view === "app" && (
-        <MainApp
-          user={user}
-          scanUrl={scanUrl}
-          scanTimestamp={scanTimestamp}
-          isScanning={isScanning}
-          onScan={handleScan}
-          onScanComplete={handleScanComplete}
-          onGoHome={() => setView("landing")}
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <Navbar
+          currentView={view}
           riskTheme={riskTheme}
-          onThemeChange={(newTheme) => setRiskTheme(newTheme)}
+          onNavigate={(newView) => setView(newView)}
+          onLoginClick={() => setView("login")}
+          onSignupClick={() => setView("signup")}
+          user={user}
+          onLogout={handleLogout}
         />
-      )}
 
-      {/* 3. Features Page (06 Core Detection Pillars) */}
-      {view === "features" && (
-        <FeaturesPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+        <main className="flex-1">
+          <AnimatePresence mode="wait">
+            <motion.div key={view} {...pageTransition}>
+              {view === "landing" && (
+                <LandingPage
+                  onLaunchApp={() => setView("app")}
+                  onQuickScan={(url) => handleScan(url)}
+                />
+              )}
 
-      {/* 4. Workflow Page (Autonomous Pipeline Stages) */}
-      {view === "workflow" && (
-        <WorkflowPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+              {view === "app" && (
+                <MainApp
+                  user={user}
+                  scanUrl={scanUrl}
+                  scanTimestamp={scanTimestamp}
+                  isScanning={isScanning}
+                  onScan={handleScan}
+                  onScanComplete={handleScanComplete}
+                  onGoHome={() => setView("landing")}
+                  riskTheme={riskTheme}
+                  onThemeChange={(newTheme) => setRiskTheme(newTheme)}
+                />
+              )}
 
-      {/* 5. Why Us Page (Governance & Trust Benchmarks) */}
-      {view === "why-us" && (
-        <WhyUsPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+              {view === "features" && (
+                <FeaturesPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
 
-      {/* 6. Categories / Taxonomy Page (Scoring Thresholds) */}
-      {view === "categories" && (
-        <CategoriesPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+              {view === "workflow" && (
+                <WorkflowPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
 
-      {/* 7. Manifesto / About Page (Ethics Pledge) */}
-      {view === "manifesto" && (
-        <ManifestoPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+              {view === "why-us" && (
+                <WhyUsPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
 
-      {/* 8. Contact Page (Safety Team & Enterprise Inquiries) */}
-      {view === "contact" && (
-        <ContactPage
-          onLaunchApp={() => setView("app")}
-          onGoHome={() => setView("landing")}
-        />
-      )}
+              {view === "categories" && (
+                <CategoriesPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
+
+              {view === "manifesto" && (
+                <ManifestoPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
+
+              {view === "contact" && (
+                <ContactPage
+                  onLaunchApp={() => setView("app")}
+                  onGoHome={() => setView("landing")}
+                />
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+      </div>
     </div>
   );
 }

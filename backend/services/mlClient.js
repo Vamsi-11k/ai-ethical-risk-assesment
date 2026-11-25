@@ -1,27 +1,20 @@
-import AppError from '../utils/AppError.js';
+import { detectTechStack } from './techDetectorService.js';
 
-/**
- * Enhanced Heuristic Risk Evaluation Engine
- * Evaluates domains, privacy signals, dark patterns, illicit streaming, and suspicious TLDs.
- */
-function evaluateHeuristicFallback(url) {
+function evaluateHeuristicFallback(url, detectedTechStack) {
   const lower = (url || '').toLowerCase();
   const isHttps = lower.startsWith('https://');
 
-  // Piracy, illicit streaming, torrents, warez, malvertising
   const isPiracyOrIllicit = lower.includes('movierulz') || lower.includes('netmirror') || lower.includes('torrent') ||
     lower.includes('123movies') || lower.includes('fmovies') || lower.includes('putlocker') ||
     lower.includes('pirat') || lower.includes('warez') || lower.includes('crack') ||
     lower.includes('freemovie') || lower.includes('stream') || lower.includes('apkpure') ||
     lower.includes('popads');
 
-  // High-abuse suspicious TLDs
   const isSuspiciousTLD = lower.includes('.forex') || lower.includes('.top') ||
     lower.includes('.xyz') || lower.includes('.buzz') || lower.includes('.click') ||
     lower.includes('.fit') || lower.includes('.work') || lower.includes('.gq') ||
     lower.includes('.cf') || lower.includes('.ml') || lower.includes('.tk');
 
-  // Deceptive & dark pattern keywords
   const isDarkPatternOrMalware = lower.includes('dark-pattern') || lower.includes('phish') ||
     lower.includes('malware') || lower.includes('tracker') || lower.includes('gamble') ||
     lower.includes('betting') || lower.includes('casino');
@@ -81,11 +74,7 @@ function evaluateHeuristicFallback(url) {
         'Verify media licensing through certified legitimate streaming providers.',
       ],
       features: { https: isHttps ? 1 : 0, dark_patterns: 1, tracking_pixels: 8, piracy_flag: 1 },
-      tech_stack: {
-        server: 'Offshore Proxy / Anonymous Reverse Proxy',
-        security: isHttps ? 'Anonymous TLS Certificate / Missing HSTS' : 'Insecure Plaintext HTTP',
-        framework: 'Third-Party Ad Network Scripts / Dynamic Redirect Wrappers',
-      },
+      tech_stack: detectedTechStack,
     };
   }
 
@@ -106,15 +95,10 @@ function evaluateHeuristicFallback(url) {
         'Publish plain-language summaries of data processing agreements.',
       ],
       features: { https: 1, dark_patterns: 0, tracking_pixels: 3 },
-      tech_stack: {
-        server: 'Proprietary Edge Infrastructure',
-        security: 'TLS 1.3 / Strict-Transport-Security',
-        framework: 'React / GraphQL / Edge CDN',
-      },
+      tech_stack: detectedTechStack,
     };
   }
 
-  // Default / Safe
   const baseScore = isHttps ? 88 : 64;
   return {
     trust_score: baseScore,
@@ -132,17 +116,10 @@ function evaluateHeuristicFallback(url) {
       'Regularly review third-party SDK dependencies for CVE vulnerabilities.',
     ],
     features: { https: isHttps ? 1 : 0, dark_patterns: 0, tracking_pixels: 1 },
-    tech_stack: {
-      server: 'Cloudflare / Edge Network',
-      security: 'TLS 1.3 / HSTS / Content-Security-Policy',
-      framework: 'Next.js / Modern Secure API',
-    },
+    tech_stack: detectedTechStack,
   };
 }
 
-/**
- * Fast URL score with 800ms failover timeout to avoid any delays when Python microservice is offline.
- */
 export const scoreUrl = async (url) => {
   const primaryUrl = process.env.ML_SERVICE_URL || 'http://127.0.0.1:8000';
 
@@ -161,11 +138,15 @@ export const scoreUrl = async (url) => {
     clearTimeout(timeoutId);
 
     if (response.ok) {
-      return await response.json();
+      const data = await response.json();
+      if (!data.tech_stack || !data.tech_stack.categories || data.tech_stack.total_detected === 0) {
+        data.tech_stack = await detectTechStack(url);
+      }
+      return data;
     }
-  } catch (err) {
-    // Microservice offline or timed out; fallback immediately
+  } catch {
   }
 
-  return evaluateHeuristicFallback(url);
+  const detectedTechStack = await detectTechStack(url);
+  return evaluateHeuristicFallback(url, detectedTechStack);
 };

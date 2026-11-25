@@ -1,17 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="50%" stop-color="#059669" />
-      <stop offset="100%" stop-color="#047857" />
+    <linearGradient id="aiGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+    <linearGradient id="coreGrad" x1="20" y1="18" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#67e8f9" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
   </defs>
-  <path d="M24 4L7 11V22C7 32.8 14.3 42.7 24 45C33.7 42.7 41 32.8 41 22V11L24 4Z" fill="#08100b" stroke="url(#shieldGrad)" stroke-width="2.5" filter="url(#glow)"/>
-  <path d="M24 9L11 14.5V23C11 31.2 16.5 38.8 24 41C31.5 38.8 37 31.2 37 23V14.5L24 9Z" fill="rgba(16, 185, 129, 0.15)" stroke="#34d399" stroke-width="1.2"/>
-  <circle cx="24" cy="24" r="6" fill="#10b981" opacity="0.9"/>
-  <path d="M21 24L23.5 26.5L27.5 21.5" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#09090b" />
+  <rect x="5" y="5" width="54" height="54" rx="15" stroke="url(#aiGrad)" stroke-opacity="0.45" stroke-width="2" />
+  <path d="M32 13L17 19.5V30.5C17 40.3 23.4 49.1 32 51.5C40.6 49.1 47 40.3 47 30.5V19.5L32 13Z" stroke="url(#aiGrad)" stroke-width="2.6" stroke-linejoin="round" fill="#111115" />
+  <circle cx="32" cy="27" r="3.2" fill="#ffffff" />
+  <circle cx="24.5" cy="36.5" r="2.6" fill="url(#coreGrad)" />
+  <circle cx="39.5" cy="36.5" r="2.6" fill="url(#coreGrad)" />
+  <path d="M32 27L24.5 36.5M32 27L39.5 36.5M24.5 36.5H39.5" stroke="url(#coreGrad)" stroke-width="2" stroke-linecap="round" />
 </svg>
